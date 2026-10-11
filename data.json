@@ -153,6 +153,2218 @@
       "meaning": "Không còn gì trong tủ lạnh.",
       "notebookId": "mv0lj66s86hqm",
       "term": "There is nothing left in the fridge."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk97u41j",
+      "meaning": "Tại sao bạn lại muộn vậy?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Why are you so late?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk92xgh6",
+      "meaning": "Tôi lỡ xe buýt.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I missed the bus."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9nwkjz",
+      "meaning": "Tôi bị kẹt xe.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I got stuck in traffic."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9x77lj",
+      "meaning": "Tôi ngủ quên.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I overslept."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9vg0bp",
+      "meaning": "Ý bạn là gì?",
+      "notebookId": "mv389hm44r09y",
+      "term": "What do you mean?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk94ghx0",
+      "meaning": "Ý tôi là, tốt hơn nên đợi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I mean, it's better to wait."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk97sced",
+      "meaning": "Tôi thực sự nghĩ đó là một ý tồi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I really think it's a bad idea."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk966dmn",
+      "meaning": "Tôi đang nói rằng chúng ta cần thêm thời gian.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I'm saying we need more time."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9sowc2",
+      "meaning": "Chuyện đó xảy ra như thế nào?",
+      "notebookId": "mv389hm44r09y",
+      "term": "How did that happen?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9l1fdf",
+      "meaning": "Tôi quên khóa cửa.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I forgot to lock the door."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9kcudf",
+      "meaning": "Tôi không biết nữa.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I have no idea."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9u2amu",
+      "meaning": "Nó tự nhiên xảy ra thôi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "It just happened out of nowhere."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk99yflw",
+      "meaning": "Tại sao con gái bạn lại khóc?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Why is your daughter crying?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9twac0",
+      "meaning": "Con bé làm mất đồ chơi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "She lost her toy."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9ce6e7",
+      "meaning": "Con bé chỉ là bị mệt thôi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "She's just tired."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk97v49o",
+      "meaning": "Con bé bị ngã và đau đầu gối.",
+      "notebookId": "mv389hm44r09y",
+      "term": "She fell and hurt her knee."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9x8czp",
+      "meaning": "Tôi có thể giúp gì cho bạn không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "May I help you?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9d5h0m",
+      "meaning": "Vâng, tôi đang tìm một chiếc áo khoác.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Yes, I'm looking for a jacket."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9egrpf",
+      "meaning": "Vâng, tôi cần giúp đỡ với cái này.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Yes, I need some help with this."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9d338r",
+      "meaning": "Tôi chỉ đang xem thôi, cảm ơn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I'm just looking. Thanks."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9r6kql",
+      "meaning": "Bạn có muốn kiểm tra dầu máy không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Do you want your oil checked?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk95xf7v",
+      "meaning": "Chắc chắn rồi, lâu rồi chưa kiểm tra.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sure, it's been a while."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9lqkil",
+      "meaning": "Không, nó vẫn ổn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "No, it's still good."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9wubxh",
+      "meaning": "Có lẽ nên kiểm tra để chắc chắn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Maybe just to be sure."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9qswt6",
+      "meaning": "Mấy giờ bạn phải có mặt ở chỗ làm?",
+      "notebookId": "mv389hm44r09y",
+      "term": "What time do you have to be at work?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk91ps42",
+      "meaning": "Khoảng 30 phút nữa.",
+      "notebookId": "mv389hm44r09y",
+      "term": "In about 30 minutes."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9ylmpy",
+      "meaning": "Hôm nay tôi làm ca đêm.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I'm on the night shift today."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk92kemo",
+      "meaning": "Hôm nay tôi bắt đầu muộn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I start late today."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9xtsgg",
+      "meaning": "Bạn cho tôi đi nhờ về nhà được không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Could you give me a lift home?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9uxam9",
+      "meaning": "Được, lên xe đi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sure, hop in."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9sxivt",
+      "meaning": "Tất nhiên rồi, tôi cũng đi đường đó.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Of course, I'm heading that way."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk94m8ns",
+      "meaning": "Xin lỗi, tôi đang vội.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sorry, I'm in a hurry."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk94r3jm",
+      "meaning": "Khi nào bạn đi?",
+      "notebookId": "mv389hm44r09y",
+      "term": "When are you leaving?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9zquoq",
+      "meaning": "Tôi đi lúc 5 giờ chiều.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I'm leaving at 5:00 p.m."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk97mlpc",
+      "meaning": "Khoảng 10 phút nữa.",
+      "notebookId": "mv389hm44r09y",
+      "term": "In about 10 minutes."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9pmnlz",
+      "meaning": "Sau khi tôi đóng gói đồ đạc xong.",
+      "notebookId": "mv389hm44r09y",
+      "term": "After I pack my things."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk97sv0v",
+      "meaning": "Bạn có nhận thanh toán tiền mặt không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Do you accept paying cash?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk953805",
+      "meaning": "Tất nhiên, tiền mặt là được.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Of course, cash is fine."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9led8f",
+      "meaning": "Xin lỗi, chúng tôi chỉ nhận thẻ.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sorry, we only accept cards."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk933ppv",
+      "meaning": "Bây giờ chúng tôi không nhận tiền mặt.",
+      "notebookId": "mv389hm44r09y",
+      "term": "We're cashless now."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9u7iur",
+      "meaning": "Tại sao tối qua bạn không đến?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Why didn't you show up last night?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9h11g7",
+      "meaning": "Tôi thấy không khỏe.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I wasn't feeling well."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk94zowq",
+      "meaning": "Xin lỗi, tôi hoàn toàn quên mất.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sorry, I completely forgot."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9c5f4v",
+      "meaning": "Tôi không thể đến kịp.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I couldn't make it on time."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9b3nmw",
+      "meaning": "Bạn bị làm sao vậy?",
+      "notebookId": "mv389hm44r09y",
+      "term": "What's wrong with you?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9iavh9",
+      "meaning": "Tôi chỉ bị đau đầu thôi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I just have a headache."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9ozf9b",
+      "meaning": "Hôm nay là một ngày tồi tệ.",
+      "notebookId": "mv389hm44r09y",
+      "term": "It's been a rough day."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9w5w7a",
+      "meaning": "Dạo này tôi thực sự bị căng thẳng.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I'm really stressed these days."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk90nlxq",
+      "meaning": "Bạn có thích sô-cô-la không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Do you like chocolate?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9vx0wa",
+      "meaning": "Tất nhiên rồi, đặc biệt là sô-cô-la đen.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Of course, especially dark chocolate."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9q80ik",
+      "meaning": "Không hẳn. Tôi thích kẹo hơn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Not really. I prefer candy."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9pzvly",
+      "meaning": "Tôi thích nhưng không ăn nhiều.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I like it, but I don't eat much."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9a71qy",
+      "meaning": "Tôi có thể hỏi bạn một câu được không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "May I ask you a question?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9r9qmq",
+      "meaning": "Được chứ, cứ hỏi đi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sure, go ahead."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9vvxp0",
+      "meaning": "Vâng, tôi đang nghe đây.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Yes, I'm listening."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9nw07c",
+      "meaning": "Đợi chút nhé, để tôi xong việc này đã.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Just a moment. Let me finish this."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9m8sf4",
+      "meaning": "Sở thích của bạn là gì?",
+      "notebookId": "mv389hm44r09y",
+      "term": "What is your hobby?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9q7fdh",
+      "meaning": "Tôi thích xem phim.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I like watching movies."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk94unf6",
+      "meaning": "Tôi thường đi đạp xe vào cuối tuần.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I often go cycling on weekends."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9pkfgh",
+      "meaning": "Tôi thích nấu những món mới.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I love cooking new recipes."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk929xcl",
+      "meaning": "Đôi giày nào là của bạn?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Which pair of shoes is yours?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9q9syf",
+      "meaning": "Đôi màu đen ở cạnh cửa.",
+      "notebookId": "mv389hm44r09y",
+      "term": "The black ones by the door."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk916kko",
+      "meaning": "Đôi nằm cạnh đôi của bạn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "The ones next to yours."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9n9mew",
+      "meaning": "Của tôi là đôi giày cao gót.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Mine are the high heels."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk934wwt",
+      "meaning": "Bạn có thể giảm tiếng ồn được không?",
+      "notebookId": "mv389hm44r09y",
+      "term": "Can you keep the noise down?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9tsyy9",
+      "meaning": "Xin lỗi, tôi sẽ giữ yên lặng.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sorry, I'll be quiet."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9kak1x",
+      "meaning": "Chúng tôi sẽ kết thúc sớm thôi, chờ chút.",
+      "notebookId": "mv389hm44r09y",
+      "term": "We'll wrap up soon. Hang on."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9dgiwj",
+      "meaning": "Xin lỗi, chúng tôi hơi quá đà một chút.",
+      "notebookId": "mv389hm44r09y",
+      "term": "Sorry, we got a little carried away."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9jkh83",
+      "meaning": "Bác sĩ đã nói gì vậy?",
+      "notebookId": "mv389hm44r09y",
+      "term": "What did the doctor say?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9lm3cc",
+      "meaning": "Ông ấy nói mọi thứ đều ổn.",
+      "notebookId": "mv389hm44r09y",
+      "term": "He said everything looks fine."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9lv3zm",
+      "meaning": "Ông ấy bảo tôi chỉ cần nghỉ ngơi.",
+      "notebookId": "mv389hm44r09y",
+      "term": "He just told me to rest."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9sgfo1",
+      "meaning": "Tôi cần phải uống thuốc kháng sinh.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I need to take some antibiotics."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9jj4p6",
+      "meaning": "Cây cầu đó dài bao nhiêu?",
+      "notebookId": "mv389hm44r09y",
+      "term": "How long is that bridge?"
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk9s58hg",
+      "meaning": "Nó dài khoảng 2 km.",
+      "notebookId": "mv389hm44r09y",
+      "term": "It's about 2 km long."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk94b2t6",
+      "meaning": "Tôi không chắc, nhưng nó khá dài.",
+      "notebookId": "mv389hm44r09y",
+      "term": "I'm not sure, but it's pretty long."
+    },
+    {
+      "createdAt": 1791687147129,
+      "id": "mv389mk96tdme",
+      "meaning": "Nếu bạn đi bộ thì mất khoảng 10 phút.",
+      "notebookId": "mv389hm44r09y",
+      "term": "If you walk, maybe 10 minutes."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigndx61",
+      "meaning": "Bạn đã làm bài thuyết trình rất tuyệt vời.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "You did a fantastic job on your presentation."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigpxoo0",
+      "meaning": "Cô ấy có khuôn mặt hiền hậu và tươi cười.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "She has a kind and smiling face."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigwm32d",
+      "meaning": "Tôi khát quá, tôi cần một cốc nước.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "I am thirsty; I need a glass of water."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewig4prbh",
+      "meaning": "Anh ấy sống ở tầng bốn.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "He lives on the fourth floor."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewignc658",
+      "meaning": "Đây là sự khởi đầu của một dự án mới.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "This is the beginning of a new project."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigu3mdv",
+      "meaning": "Làm ơn cho tôi một cốc nước.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Please give me a glass of water."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigvy78i",
+      "meaning": "Chị gái tôi sẽ vào đại học vào năm sau.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "My sister will go to college next year."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigr36ht",
+      "meaning": "Mùa xuân là mùa tôi thích nhất trong năm.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Spring is my favorite season of the year."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigr9ecu",
+      "meaning": "Giá này có bao gồm bữa sáng không?",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Does the price include breakfast?"
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewignjxl4",
+      "meaning": "Tôi sinh vào tháng Bảy.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "I was born in July."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewiglpd89",
+      "meaning": "Đứa trẻ nhỏ sợ bóng tối.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "The small child is afraid of the dark."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigkc585",
+      "meaning": "Vui lòng dời xe của bạn khỏi lối vào nhà.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Please move your car from the driveway."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigjlpim",
+      "meaning": "Chúng tôi sống trong một ngôi nhà nhỏ có vườn.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "We live in a small house with a garden."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewig9r8c6",
+      "meaning": "Tôi thích đi du lịch đến những đất nước mới.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "I love to travel to new countries."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewiguafy1",
+      "meaning": "Chúng tôi thường cười vì những câu chuyện đùa hài hước của anh ấy.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "We often laugh at his funny jokes."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigxn4tg",
+      "meaning": "Cây sẽ chết nếu không có nước và ánh nắng.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Plants will die without water and sunlight."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigi9ddn",
+      "meaning": "Ai đó đã để cửa mở.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Someone left the door open."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigyy1fx",
+      "meaning": "Xin hỏi phòng tắm ở đâu ạ?",
+      "notebookId": "mv3aery4u04v1",
+      "term": "Where is the bathroom, please?"
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigptkoh",
+      "meaning": "Một giờ có sáu mươi phút.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "There are sixty minutes in one hour."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigwwh9f",
+      "meaning": "Bạn phải quyết định ăn gì cho bữa tối.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "You must decide what to eat for dinner."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewigrr5vh",
+      "meaning": "Tối qua tôi đi ngủ sớm.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "I went to bed early last night."
+    },
+    {
+      "createdAt": 1791690752536,
+      "id": "mv3aewig5r37c",
+      "meaning": "Sau giờ làm, tôi thích thư giãn với một cuốn sách.",
+      "notebookId": "mv3aery4u04v1",
+      "term": "After work, I like to relax with a book."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf72zyl",
+      "meaning": "Tôi đồng ý với ý kiến của bạn.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I agree with your idea."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfi1clf",
+      "meaning": "Nhà tôi có một cánh cửa màu đỏ.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "My house has a red door."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf2934v",
+      "meaning": "Hãy tận hưởng từng khoảnh khắc trong cuộc sống của bạn.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "Enjoy every moment of your life."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf9xcds",
+      "meaning": "Tôi cần một ít tiền để đi chợ.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I need some money for groceries."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf0hixz",
+      "meaning": "Vui lòng xếp hàng chờ đến lượt.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "Please wait in line for your turn."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfg79st",
+      "meaning": "Tôi nhớ rõ tên của anh ấy.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I remember his name clearly."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfnidvt",
+      "meaning": "Hãy rửa tay trước khi ăn tối.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "Please wash your hands before dinner."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwffuv62",
+      "meaning": "Tôi cảm thấy rất mệt sau khi chạy bộ.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I feel very tired after my run."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfmf0dw",
+      "meaning": "Tôi thích ăn phô mai với bánh mì.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I like to eat cheese with bread."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf5318z",
+      "meaning": "Cô ấy làm việc cho một công ty lớn.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "She works for a big company."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfd1gen",
+      "meaning": "Chúng ta ra công viên chơi đi.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "Let's play outside in the park."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwff206o",
+      "meaning": "Con voi là một loài động vật rất to lớn.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "An elephant is a very large animal."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfw4788",
+      "meaning": "Chúng tôi học địa lý để tìm hiểu về bản đồ.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "We study geography to learn about maps."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfdvju2",
+      "meaning": "Nhà tôi ở đối diện trường học.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "My house is opposite the school."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfa8i6b",
+      "meaning": "Tối nay tôi sẽ nấu gà cho bữa tối.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I will cook chicken for dinner tonight."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf5s5dn",
+      "meaning": "Mọi người cần mang theo một cây bút.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "Everyone needs to bring a pen."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf6di21",
+      "meaning": "Tôi ăn một đĩa sa-lát tươi vào bữa trưa.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "I eat a fresh salad for lunch."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfub2lp",
+      "meaning": "Chúng tôi đã có một cuộc nói chuyện dài về kế hoạch của mình.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "We had a long conversation about our plans."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfm6sma",
+      "meaning": "Gia đình tôi xem ti vi mỗi tối.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "My family watches television every evening."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwf1c1dl",
+      "meaning": "Có thật là bạn biết bay không?",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "Is it true that you can fly?"
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfylzip",
+      "meaning": "Chúng tôi đã lên kế hoạch cho một chuyến đi ngắn ra biển.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "We planned a short trip to the beach."
+    },
+    {
+      "createdAt": 1791690915039,
+      "id": "mv3aidwfzmgzs",
+      "meaning": "Cậu học sinh đã viết một bản báo cáo tốt cho lớp.",
+      "notebookId": "mv21a4sj2iv9b",
+      "term": "The student wrote a good report for class."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rq0t60",
+      "meaning": "Tôi thích mặc quần bò màu xanh.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "I like to wear blue jeans."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rdi5bh",
+      "meaning": "Thành phố có hơn một triệu dân.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "The city has over one million people."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rdrrv7",
+      "meaning": "Con chim bay cao trên những ngọn cây.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "The bird flew high above the trees."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0romt0y",
+      "meaning": "Tháng sau, tôi sẽ về thăm bố mẹ.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "Next month, I will visit my parents."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rpbc80",
+      "meaning": "Làm ơn bỏ cuốn sách vào túi.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "Please put the book in the bag."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0r5qcrq",
+      "meaning": "Thị trấn đã tổ chức một lễ hội âm nhạc vào tuần trước.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "The town held a music festival last week."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rrk1iq",
+      "meaning": "Bạn đã sẵn sàng đi chưa?",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "Are you ready to go now?"
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0r5d500",
+      "meaning": "Cho tôi xin hóa đơn được không?",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "Can I have the bill, please?"
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0r5uvdm",
+      "meaning": "Điện thoại mới của tôi có camera rất tốt.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "My new phone has a great camera."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0riezra",
+      "meaning": "Mở cửa sổ ra cho không khí trong lành vào.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "Open the window to let in fresh air."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rg427e",
+      "meaning": "Anh ấy là một diễn viên nổi tiếng trong nhiều bộ phim.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "He is a famous actor in many movies."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0ra5l4u",
+      "meaning": "Tôi không hiểu bài toán này.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "I do not understand this math problem."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0reh6qz",
+      "meaning": "Tôi cần đi mua đồ ăn.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "I need to go shopping for food."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rlfg68",
+      "meaning": "Cô ấy có một chú chó nhỏ tên là Max.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "She has a little dog named Max."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rfw7u0",
+      "meaning": "Cảnh sát yêu cầu mô tả chiếc xe.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "The police asked for a description of the car."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0r882es",
+      "meaning": "Làm ơn cắt bánh thành những miếng nhỏ.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "Please cut the cake into small pieces."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rfrnh0",
+      "meaning": "Con gái tôi rất thích đọc sách.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "My daughter loves to read books."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0r31kl8",
+      "meaning": "Lát nữa trong ngày tôi sẽ gặp bạn.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "I will see you later today."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rxqwes",
+      "meaning": "Cô ấy muốn trở thành một vũ công chuyên nghiệp.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "She wants to be a professional dancer."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rgugkj",
+      "meaning": "Đây là một cuộc họp rất quan trọng.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "This is a very important meeting."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0rv41y3",
+      "meaning": "Ai cũng biết một sự thật là bầu trời có màu xanh.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "It is a known fact that the sky is blue."
+    },
+    {
+      "createdAt": 1791690979995,
+      "id": "mv3ajs0r8sgor",
+      "meaning": "Chúng tôi dậy sớm để kịp chuyến tàu.",
+      "notebookId": "mv3ajoejxuvz6",
+      "term": "We woke up early to catch the train."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rekweok",
+      "meaning": "Làm ơn cho tôi một số thông tin về chuyến đi.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "Please give me some information about the trip."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7renzspt",
+      "meaning": "Tôi thích ăn một củ khoai tây nướng vào bữa tối.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I like to eat one baked potato for dinner."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7re04b4q",
+      "meaning": "Mặc áo khoác vào đi, ngoài trời lạnh lắm.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "Put on your jacket; it's cold outside."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7redq268",
+      "meaning": "Tôi nghĩ bạn gọi nhầm số rồi.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I think you have the wrong number."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7regii56",
+      "meaning": "Tôi đã mua một đôi giày mới.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I bought a new pair of shoes."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7reu3mqp",
+      "meaning": "Chúng tôi đang lên kế hoạch đi nghỉ ở biển.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "We are planning a holiday to the beach."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7resbf6j",
+      "meaning": "Tôi sẽ đợi cho đến khi bạn đến.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I will wait until you arrive."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7repqufc",
+      "meaning": "Con mèo đang trốn sau ghế sofa.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "The cat is hiding behind the couch."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rekebsa",
+      "meaning": "Tối nay chúng ta xem phim đi.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "Let's watch a film tonight."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7re5yj49",
+      "meaning": "Hôm nay bầu trời xám xịt.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "The sky is grey today."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7re53m87",
+      "meaning": "Chiếc xe đó chạy rất nhanh.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "That car is very fast."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rej7u56",
+      "meaning": "Đồng hồ điểm nửa đêm.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "The clock struck midnight."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rebwmwp",
+      "meaning": "Một con chim đã làm tổ trên cây.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "A bird built a nest in the tree."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rec2okg",
+      "meaning": "Bây giờ là mấy giờ?",
+      "notebookId": "mv3am3vtxon45",
+      "term": "What time is it now?"
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7reu5aux",
+      "meaning": "Tôi đã gửi một email cho bạn tôi.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I sent an email to my friend."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rettkl8",
+      "meaning": "Anh ấy đang theo một chế độ ăn uống lành mạnh.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "He is on a healthy diet."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7rew49ej",
+      "meaning": "Cô ấy mặc một chiếc váy trắng rất đẹp.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "She wore a beautiful white dress."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7retw2mk",
+      "meaning": "Lớp học có mười lăm học sinh.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "There are fifteen students in the class."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7reylgze",
+      "meaning": "Ngày mai tôi có một bài thi quan trọng.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I have an important exam tomorrow."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7retbbw9",
+      "meaning": "Trên kệ có mười bốn cuốn sách.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "There are fourteen books on the shelf."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7reqjnxl",
+      "meaning": "Tôi muốn học một ngôn ngữ mới.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "I want to learn a new language."
+    },
+    {
+      "createdAt": 1791691093706,
+      "id": "mv3am7re6q0ti",
+      "meaning": "Bà tôi sống ở một ngôi làng nhỏ.",
+      "notebookId": "mv3am3vtxon45",
+      "term": "My grandmother lives in a small village."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cjtiaq",
+      "meaning": "Tôi thích thiết kế ngôi nhà mới của bạn.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "I like the design of your new house."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c0ydzv",
+      "meaning": "Chúng tôi thường ăn cơm vào bữa tối.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "We often eat rice with our dinner."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9ckxwpo",
+      "meaning": "Chị gái tôi mới sinh em bé.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "My sister has a new baby."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cmqjfk",
+      "meaning": "Một du khách đã chụp ảnh tượng đài.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "A tourist took a photo of the monument."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cg4s5c",
+      "meaning": "Tôi thích đọc sách vào buổi tối.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "I like to read books in the evening."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c7zz4s",
+      "meaning": "Hãy nhìn bức tranh trên tường.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "Please look at the picture on the wall."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9ct2g59",
+      "meaning": "Ban nhạc rock đã chơi một bài hát rất hay.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "The rock band played a great song."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9csz674",
+      "meaning": "Chúng tôi đặt đồ ăn lên bàn bếp.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "We put the food on the kitchen table."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c2o5rt",
+      "meaning": "Môn học yêu thích của tôi ở trường là khoa học.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "My favorite subject in school is science."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c34q90",
+      "meaning": "Tôi đã thấy một con cá nhiều màu sắc trong bể cá.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "I saw one colorful fish in the aquarium."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9covc1q",
+      "meaning": "Anh họ tôi sống ở một thành phố khác.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "My cousin lives in a different city."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c0li6d",
+      "meaning": "Chuyến bay của chúng tôi khởi hành từ cổng B12.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "Our flight departs from gate B12."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9ccdaip",
+      "meaning": "Năm nay bà ấy tám mươi tuổi.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "She is eighty years old this year."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c1yxic",
+      "meaning": "Con mèo của tôi thích ngủ dưới nắng.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "My cat likes to sleep in the sun."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cqr46u",
+      "meaning": "Chúng tôi thích dành thời gian bên bạn bè.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "We enjoy spending time with our friends."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9ctf3qq",
+      "meaning": "Bạn có nghe thấy tiếng nhạc đang phát nhẹ nhàng không?",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "Can you hear the music playing softly?"
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9c89sew",
+      "meaning": "Vui lòng rẽ trái ở đèn giao thông tiếp theo.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "Please turn left at the next traffic light."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cbt6b8",
+      "meaning": "Cửa sau được khóa để đảm bảo an toàn.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "The back door is locked for safety."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cvw88c",
+      "meaning": "Ở đây có một quy tắc quan trọng cần tuân theo.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "There is one important rule to follow here."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cvxn0e",
+      "meaning": "Paris là thủ đô của nước Pháp.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "Paris is the capital of France."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cxu7mg",
+      "meaning": "Chúng ta cần cải thiện kỹ năng nói tiếng Anh.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "We need to improve our English speaking skills."
+    },
+    {
+      "createdAt": 1791691170816,
+      "id": "mv3anv9cakxuo",
+      "meaning": "Tối qua chúng tôi đã xem một chương trình hay trên ti vi.",
+      "notebookId": "mv3amuwasr6rw",
+      "term": "We watched a good show on television last night."
+    },
+    {
+      "id": "mv3auky32n09b",
+      "term": "Many people gathered in the town square.",
+      "meaning": "Nhiều người đã tụ tập ở quảng trường thị trấn.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky33jo76",
+      "term": "Do you want to play tennis this weekend?",
+      "meaning": "Cuối tuần này bạn có muốn chơi quần vợt không?",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3rnbhw",
+      "term": "The singer has a beautiful and powerful voice.",
+      "meaning": "Ca sĩ ấy có giọng hát hay và đầy nội lực.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3f9ucz",
+      "term": "A tall man walked into the coffee shop.",
+      "meaning": "Một người đàn ông cao lớn bước vào quán cà phê.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3h6s3i",
+      "term": "The teacher wrote on the board in the classroom.",
+      "meaning": "Giáo viên viết lên bảng trong lớp học.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3lug0m",
+      "term": "There are thirty days in the month of April.",
+      "meaning": "Tháng Tư có ba mươi ngày.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3ri4wh",
+      "term": "We traveled to the south for our vacation.",
+      "meaning": "Chúng tôi đã đi du lịch về phía nam trong kỳ nghỉ.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3erge4",
+      "term": "She wore a pretty pink dress to the party.",
+      "meaning": "Cô ấy mặc một chiếc váy hồng xinh xắn đến bữa tiệc.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3y2z3e",
+      "term": "Every child needs a loving parent to guide them.",
+      "meaning": "Mỗi đứa trẻ đều cần một người cha hoặc mẹ yêu thương để dẫn dắt chúng.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky308v8n",
+      "term": "The view from the mountain top was amazing.",
+      "meaning": "Khung cảnh từ đỉnh núi thật tuyệt vời.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3il2l9",
+      "term": "Please follow the instructions carefully.",
+      "meaning": "Vui lòng làm theo hướng dẫn một cách cẩn thận.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3w1dn1",
+      "term": "We play a fun board game every Friday.",
+      "meaning": "Chúng tôi chơi một trò chơi cờ bàn vui nhộn vào mỗi thứ Sáu.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3zv05g",
+      "term": "Can you spell the word \"apple\" for me?",
+      "meaning": "Bạn có thể đánh vần từ \"apple\" cho tôi không?",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3i6vxx",
+      "term": "Please bring your book to class tomorrow.",
+      "meaning": "Ngày mai hãy mang sách đến lớp nhé.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3plzsx",
+      "term": "I need to prepare dinner for my family.",
+      "meaning": "Tôi cần chuẩn bị bữa tối cho gia đình.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3hiz3f",
+      "term": "That is the correct answer to the question.",
+      "meaning": "Đó là câu trả lời đúng cho câu hỏi.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3kf21q",
+      "term": "Be careful not to fall on the ice.",
+      "meaning": "Hãy cẩn thận kẻo ngã trên băng.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3oupnu",
+      "term": "I need a new pen for writing notes.",
+      "meaning": "Tôi cần một cây bút mới để ghi chép.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3k8i15",
+      "term": "Can you give an example of a good sentence?",
+      "meaning": "Bạn có thể cho một ví dụ về một câu hay không?",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3frtkn",
+      "term": "The bus will arrive soon, so wait here.",
+      "meaning": "Xe buýt sắp đến rồi, nên hãy đợi ở đây.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3h2efj",
+      "term": "This cake is very delicious and sweet.",
+      "meaning": "Chiếc bánh này rất ngon và ngọt.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3auky3qm21y",
+      "term": "Please wait one minute before you go.",
+      "meaning": "Vui lòng đợi một phút trước khi đi.",
+      "notebookId": "mv3aoml64br0b",
+      "createdAt": 1791691484043
+    },
+    {
+      "id": "mv3aw6ibgnw41",
+      "term": "I like to spend time with my friends.",
+      "meaning": "Tôi thích dành thời gian với bạn bè.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ib52the",
+      "term": "I am reading an interesting book about history.",
+      "meaning": "Tôi đang đọc một cuốn sách thú vị về lịch sử.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibyv70m",
+      "term": "Do not lose your keys; they are important.",
+      "meaning": "Đừng làm mất chìa khóa, chúng rất quan trọng.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibnk33k",
+      "term": "We will paint the wall a bright blue color.",
+      "meaning": "Chúng tôi sẽ sơn bức tường màu xanh dương tươi sáng.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibjudf9",
+      "term": "What time does the train arrive at the station?",
+      "meaning": "Mấy giờ tàu đến ga?",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibeag8n",
+      "term": "Please pass the salt; I need some for my food.",
+      "meaning": "Làm ơn đưa giúp tôi lọ muối, tôi cần nêm thêm vào đồ ăn.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibm0056",
+      "term": "I wrote a quick note to remind myself.",
+      "meaning": "Tôi đã viết vội một ghi chú để tự nhắc mình.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibe41cv",
+      "term": "An apple is a healthy fruit to eat.",
+      "meaning": "Táo là một loại trái cây tốt cho sức khỏe.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ib2u15c",
+      "term": "My father reads the newspaper every morning.",
+      "meaning": "Bố tôi đọc báo mỗi sáng.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6iby3b80",
+      "term": "I like to watch movies on the weekend.",
+      "meaning": "Tôi thích xem phim vào cuối tuần.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibp3ioy",
+      "term": "My mother will teach me how to cook.",
+      "meaning": "Mẹ tôi sẽ dạy tôi nấu ăn.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibm4p9v",
+      "term": "She has long, dark hair that shines.",
+      "meaning": "Cô ấy có mái tóc dài, đen bóng.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ib4onyl",
+      "term": "This is my second cup of coffee today.",
+      "meaning": "Đây là cốc cà phê thứ hai của tôi hôm nay.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibykp7f",
+      "term": "Turn on the light; it is getting dark.",
+      "meaning": "Bật đèn lên đi, trời đang tối dần rồi.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6iblrnd5",
+      "term": "The movie will end in about ten minutes.",
+      "meaning": "Bộ phim sẽ kết thúc trong khoảng mười phút nữa.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibaflly",
+      "term": "My grandfather tells the best stories ever.",
+      "meaning": "Ông tôi kể chuyện hay nhất trên đời.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibahygx",
+      "term": "I want to visit the beach this summer.",
+      "meaning": "Tôi muốn đi biển vào mùa hè này.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibpv647",
+      "term": "Please wake me up early tomorrow morning.",
+      "meaning": "Sáng mai làm ơn đánh thức tôi dậy sớm nhé.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibj68hf",
+      "term": "What is the difference between these two colors?",
+      "meaning": "Hai màu này khác nhau ở điểm nào?",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibbhq6s",
+      "term": "The city has a thousand old trees.",
+      "meaning": "Thành phố có một nghìn cây cổ thụ.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ib9n7cy",
+      "term": "Please open the door for me.",
+      "meaning": "Làm ơn mở cửa giúp tôi.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3aw6ibtmhy4",
+      "term": "I lost a pound of weight this week.",
+      "meaning": "Tuần này tôi đã giảm được một pao cân nặng.",
+      "notebookId": "mv3aoukbkfs9y",
+      "createdAt": 1791691558643
+    },
+    {
+      "id": "mv3awjcztv0lv",
+      "term": "Learning a new language is exciting.",
+      "meaning": "Học một ngôn ngữ mới thật thú vị.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz5ygp1",
+      "term": "The price of apples is low today.",
+      "meaning": "Hôm nay giá táo rẻ.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczs7t3y",
+      "term": "We went to the cinema last night.",
+      "meaning": "Tối qua chúng tôi đã đi xem phim ở rạp.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczenjml",
+      "term": "Every player needs to practice daily.",
+      "meaning": "Mỗi cầu thủ đều cần luyện tập hằng ngày.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz8jagu",
+      "term": "Eating vegetables helps you stay healthy.",
+      "meaning": "Ăn rau giúp bạn luôn khỏe mạnh.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczzef4v",
+      "term": "I drink black coffee every morning.",
+      "meaning": "Tôi uống cà phê đen mỗi sáng.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcze5yc8",
+      "term": "My flight leaves from the airport at noon.",
+      "meaning": "Chuyến bay của tôi cất cánh từ sân bay lúc giữa trưa.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczkr6fh",
+      "term": "The customer bought a new bicycle.",
+      "meaning": "Vị khách hàng đã mua một chiếc xe đạp mới.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz19gvm",
+      "term": "Put some ice in your drink.",
+      "meaning": "Cho một ít đá vào đồ uống của bạn đi.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczw0wy8",
+      "term": "I use the internet for information.",
+      "meaning": "Tôi dùng internet để tìm thông tin.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczboy75",
+      "term": "Visit our website for more details.",
+      "meaning": "Hãy truy cập trang web của chúng tôi để biết thêm chi tiết.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcze8gp4",
+      "term": "The ball is between the two boxes.",
+      "meaning": "Quả bóng nằm giữa hai cái hộp.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz6b0rp",
+      "term": "They live on a small tropical island.",
+      "meaning": "Họ sống trên một hòn đảo nhiệt đới nhỏ.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz7r5qc",
+      "term": "I sometimes read books before bed.",
+      "meaning": "Thỉnh thoảng tôi đọc sách trước khi đi ngủ.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz9fmh0",
+      "term": "Regular exercise improves your health.",
+      "meaning": "Tập thể dục thường xuyên giúp cải thiện sức khỏe.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczj6ik1",
+      "term": "This room is very bright and clean.",
+      "meaning": "Căn phòng này rất sáng sủa và sạch sẽ.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczd5wnk",
+      "term": "We need to talk about the plan.",
+      "meaning": "Chúng ta cần nói chuyện về kế hoạch.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz50od1",
+      "term": "I will cook dinner for my family.",
+      "meaning": "Tôi sẽ nấu bữa tối cho gia đình.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjcz8mdvi",
+      "term": "My dog loves to play in the park.",
+      "meaning": "Con chó của tôi rất thích chơi ở công viên.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczua7ve",
+      "term": "He introduced me to his girlfriend.",
+      "meaning": "Anh ấy đã giới thiệu tôi với bạn gái của mình.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3awjczkxctn",
+      "term": "We can create a beautiful garden here.",
+      "meaning": "Chúng ta có thể tạo ra một khu vườn đẹp ở đây.",
+      "notebookId": "mv3aow3w6jr8l",
+      "createdAt": 1791691575299
+    },
+    {
+      "id": "mv3ayq6sq1wce",
+      "term": "This song is very popular right now.",
+      "meaning": "Bài hát này hiện đang rất thịnh hành.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sf7zq1",
+      "term": "Can you spell your name for me?",
+      "meaning": "Bạn có thể đánh vần tên của bạn cho tôi không?",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sgqozx",
+      "term": "I went to the store with my friend.",
+      "meaning": "Tôi đã đi đến cửa hàng cùng với bạn tôi.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sx2gr3",
+      "term": "The park is very near my house.",
+      "meaning": "Công viên ở rất gần nhà tôi.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6smqkxo",
+      "term": "The young woman helped me find my way.",
+      "meaning": "Cô gái trẻ đã giúp tôi tìm đường.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sh8yaq",
+      "term": "She always drinks coffee in the morning.",
+      "meaning": "Cô ấy luôn uống cà phê vào buổi sáng.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6s79xwe",
+      "term": "The sun rises in the east every morning.",
+      "meaning": "Mỗi sáng mặt trời mọc ở phía đông.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6s54yz8",
+      "term": "Do you have a plan for the weekend?",
+      "meaning": "Bạn có kế hoạch gì cho cuối tuần không?",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sjk8c1",
+      "term": "Please ask your teacher for help.",
+      "meaning": "Hãy nhờ giáo viên của bạn giúp đỡ.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6s83ojy",
+      "term": "It is still raining outside right now.",
+      "meaning": "Bây giờ ngoài trời vẫn đang mưa.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6syrgez",
+      "term": "I need to finish my homework tonight.",
+      "meaning": "Tối nay tôi cần làm xong bài tập về nhà.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6snirsm",
+      "term": "What is your phone number, please?",
+      "meaning": "Xin cho biết số điện thoại của bạn là gì?",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6s7h384",
+      "term": "My brother is very tall for his age.",
+      "meaning": "Em trai tôi rất cao so với tuổi.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sqelec",
+      "term": "My bedroom has a big window.",
+      "meaning": "Phòng ngủ của tôi có một cửa sổ lớn.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6shv5f5",
+      "term": "The hospital is open all night.",
+      "meaning": "Bệnh viện mở cửa suốt đêm.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6sjb9kr",
+      "term": "Can you draw a picture for me?",
+      "meaning": "Bạn có thể vẽ cho tôi một bức tranh không?",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6squqy8",
+      "term": "I need to study for my exam.",
+      "meaning": "Tôi cần học bài cho kỳ thi.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6seiadx",
+      "term": "An adult must accompany the child.",
+      "meaning": "Trẻ em phải có người lớn đi kèm.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6s6ond4",
+      "term": "Learning a new language is a useful skill.",
+      "meaning": "Học một ngôn ngữ mới là một kỹ năng hữu ích.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6s7oz8g",
+      "term": "My grandmother will be fifty next year.",
+      "meaning": "Năm sau bà tôi sẽ tròn năm mươi tuổi.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3ayq6slqcab",
+      "term": "I am taking an English course.",
+      "meaning": "Tôi đang theo học một khóa tiếng Anh.",
+      "notebookId": "mv3aoza7tgxpm",
+      "createdAt": 1791691677460
+    },
+    {
+      "id": "mv3b3pl8fz8ug",
+      "term": "This tool is very useful for repairs.",
+      "meaning": "Dụng cụ này rất hữu ích cho việc sửa chữa.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl82ujtn",
+      "term": "Be careful, there is a snake in the grass.",
+      "meaning": "Cẩn thận, có một con rắn trong bãi cỏ.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8n593z",
+      "term": "Are you sure about that answer?",
+      "meaning": "Bạn có chắc về câu trả lời đó không?",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8iuh9z",
+      "term": "Let's go to the beach tomorrow.",
+      "meaning": "Ngày mai chúng ta đi biển đi.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8v5y8o",
+      "term": "I like to eat one boiled egg for breakfast.",
+      "meaning": "Tôi thích ăn một quả trứng luộc vào bữa sáng.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8ezf7n",
+      "term": "Please fill this bottle with water.",
+      "meaning": "Làm ơn đổ đầy nước vào chai này.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl80pmu0",
+      "term": "That is my favorite song to sing.",
+      "meaning": "Đó là bài hát tôi thích hát nhất.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8g084v",
+      "term": "You have the right answer.",
+      "meaning": "Bạn đã trả lời đúng.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8n2ty9",
+      "term": "I need to leave now.",
+      "meaning": "Tôi cần phải đi bây giờ.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl81twrj",
+      "term": "Plants need sun and water to grow.",
+      "meaning": "Cây cần ánh nắng và nước để phát triển.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8e6ry7",
+      "term": "I will pay for the meal.",
+      "meaning": "Tôi sẽ trả tiền bữa ăn.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8i59j7",
+      "term": "He walked into the room.",
+      "meaning": "Anh ấy bước vào phòng.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl84w3g3",
+      "term": "We are going to a concert tonight.",
+      "meaning": "Tối nay chúng tôi sẽ đi xem hòa nhạc.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl836vvl",
+      "term": "My mom baked a delicious birthday cake.",
+      "meaning": "Mẹ tôi đã nướng một chiếc bánh sinh nhật rất ngon.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8h3q25",
+      "term": "I must finish my homework before dinner.",
+      "meaning": "Tôi phải làm xong bài tập về nhà trước bữa tối.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8z4rbr",
+      "term": "The cat is sleeping under the table.",
+      "meaning": "Con mèo đang ngủ dưới gầm bàn.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8svze5",
+      "term": "Please wash your hands before you eat.",
+      "meaning": "Hãy rửa tay trước khi ăn.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8wyopi",
+      "term": "My leg hurts after running so much.",
+      "meaning": "Chân tôi bị đau sau khi chạy quá nhiều.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl88zmfr",
+      "term": "This book is really interesting.",
+      "meaning": "Cuốn sách này thật sự rất thú vị.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8d6tim",
+      "term": "We had a great time at the party.",
+      "meaning": "Chúng tôi đã có khoảng thời gian tuyệt vời ở bữa tiệc.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl8k7ksr",
+      "term": "Our teacher helps us learn new things.",
+      "meaning": "Thầy cô giúp chúng tôi học những điều mới.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b3pl820gs5",
+      "term": "Everybody wants to go home now.",
+      "meaning": "Bây giờ mọi người đều muốn về nhà.",
+      "notebookId": "mv3ap1191gzhf",
+      "createdAt": 1791691909964
+    },
+    {
+      "id": "mv3b40fnl9ia2",
+      "term": "I want the other book, please.",
+      "meaning": "Làm ơn cho tôi cuốn sách kia.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnhtxr2",
+      "term": "The fresh air felt good this morning.",
+      "meaning": "Sáng nay không khí trong lành thật dễ chịu.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnbrgj7",
+      "term": "Daily practice helps you improve your skills.",
+      "meaning": "Luyện tập hằng ngày giúp bạn cải thiện kỹ năng.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fneblba",
+      "term": "Please let me help you with that.",
+      "meaning": "Hãy để tôi giúp bạn việc đó.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fn7ozyu",
+      "term": "The policeman directed traffic on the street.",
+      "meaning": "Viên cảnh sát điều khiển giao thông trên đường phố.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fni9ph2",
+      "term": "There are seventy pages in this book.",
+      "meaning": "Cuốn sách này có bảy mươi trang.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnhc0sj",
+      "term": "We took a small boat out on the lake.",
+      "meaning": "Chúng tôi chèo một chiếc thuyền nhỏ ra hồ.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnj5vgx",
+      "term": "Let's go for a walk in the park.",
+      "meaning": "Chúng ta đi dạo trong công viên đi.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnzl2ud",
+      "term": "A small group gathered near the entrance.",
+      "meaning": "Một nhóm nhỏ tụ tập gần lối vào.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnu5y6h",
+      "term": "It will probably rain later today.",
+      "meaning": "Có lẽ lát nữa trời sẽ mưa.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnuyres",
+      "term": "She is a famous singer from my country.",
+      "meaning": "Cô ấy là một ca sĩ nổi tiếng ở nước tôi.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnnmspr",
+      "term": "Would you like some cream with your coffee?",
+      "meaning": "Bạn có muốn thêm chút kem vào cà phê không?",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fn94umz",
+      "term": "He painted the wall a bright blue color.",
+      "meaning": "Anh ấy đã sơn bức tường màu xanh dương tươi sáng.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnhbi7m",
+      "term": "Please stay here until I return.",
+      "meaning": "Hãy ở lại đây cho đến khi tôi quay lại.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fns8shq",
+      "term": "This coffee costs one euro.",
+      "meaning": "Cốc cà phê này giá một euro.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnigr9p",
+      "term": "He wore a clean white shirt.",
+      "meaning": "Anh ấy mặc một chiếc áo sơ mi trắng sạch sẽ.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnhh579",
+      "term": "Where is the key for the front door?",
+      "meaning": "Chìa khóa cửa trước ở đâu?",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnt10vb",
+      "term": "Be careful not to break the glass.",
+      "meaning": "Cẩn thận đừng làm vỡ cái cốc.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fngcqfv",
+      "term": "He nodded his head in agreement.",
+      "meaning": "Anh ấy gật đầu đồng ý.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fntedaf",
+      "term": "Let's start the meeting at 10 AM.",
+      "meaning": "Chúng ta hãy bắt đầu cuộc họp lúc 10 giờ sáng.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fnrir0n",
+      "term": "A lion is a powerful wild animal.",
+      "meaning": "Sư tử là một loài động vật hoang dã mạnh mẽ.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
+    },
+    {
+      "id": "mv3b40fn20uw1",
+      "term": "Please close the door when you leave.",
+      "meaning": "Vui lòng đóng cửa khi bạn ra về.",
+      "notebookId": "mv3ap2hu0m1oq",
+      "createdAt": 1791691924019
     }
   ],
   "books": [
@@ -164,11 +2376,249 @@
       "name": "a1 - lesson 1"
     },
     {
+      "color": "#9cc9f5",
+      "createdAt": 1791614947267,
       "id": "mv21a4sj2iv9b",
       "kind": "notebook",
-      "name": "a1 - lesson 2",
+      "name": "a1 - lesson 2"
+    },
+    {
+      "color": "#f5b0b0",
+      "createdAt": 1791687140716,
+      "id": "mv389hm44r09y",
+      "kind": "notebook",
+      "name": "Youtube - 8000 sentence - lesson 1"
+    },
+    {
+      "color": "#a8dcc1",
+      "createdAt": 1791690746620,
+      "id": "mv3aery4u04v1",
+      "kind": "notebook",
+      "name": "a1 - lesson 9"
+    },
+    {
+      "color": "#c9b6f2",
+      "createdAt": 1791690975307,
+      "id": "mv3ajoejxuvz6",
+      "kind": "notebook",
+      "name": "a1 - lesson 3"
+    },
+    {
+      "color": "#ffb877",
+      "createdAt": 1791691088681,
+      "id": "mv3am3vtxon45",
+      "kind": "notebook",
+      "name": "a1 - lesson 4"
+    },
+    {
+      "color": "#ffd84d",
+      "createdAt": 1791691123690,
+      "id": "mv3amuwasr6rw",
+      "kind": "notebook",
+      "name": "a1 - lesson 5"
+    },
+    {
       "color": "#9cc9f5",
-      "createdAt": 1791614947267
+      "createdAt": 1791691206234,
+      "id": "mv3aoml64br0b",
+      "kind": "notebook",
+      "name": "a1 - lesson 6"
+    },
+    {
+      "color": "#f5b0b0",
+      "createdAt": 1791691216571,
+      "id": "mv3aoukbkfs9y",
+      "kind": "notebook",
+      "name": "a1 - lesson 7"
+    },
+    {
+      "color": "#a8dcc1",
+      "createdAt": 1791691218572,
+      "id": "mv3aow3w6jr8l",
+      "kind": "notebook",
+      "name": "a1 - lesson 8"
+    },
+    {
+      "color": "#c9b6f2",
+      "createdAt": 1791691222687,
+      "id": "mv3aoza7tgxpm",
+      "kind": "notebook",
+      "name": "a1 - lesson 10"
+    },
+    {
+      "color": "#ffb877",
+      "createdAt": 1791691224957,
+      "id": "mv3ap1191gzhf",
+      "kind": "notebook",
+      "name": "a1 - lesson 11"
+    },
+    {
+      "color": "#ffd84d",
+      "createdAt": 1791691226850,
+      "id": "mv3ap2hu0m1oq",
+      "kind": "notebook",
+      "name": "a1 - lesson 12"
+    },
+    {
+      "color": "#9cc9f5",
+      "createdAt": 1791691228891,
+      "id": "mv3ap42jzuzcr",
+      "kind": "notebook",
+      "name": "a1 - lesson 13"
+    },
+    {
+      "color": "#f5b0b0",
+      "createdAt": 1791691230952,
+      "id": "mv3ap5nsgqh4v",
+      "kind": "notebook",
+      "name": "a1 - lesson 14"
+    },
+    {
+      "color": "#a8dcc1",
+      "createdAt": 1791691232816,
+      "id": "mv3ap73k1i685",
+      "kind": "notebook",
+      "name": "a1 - lesson 15"
+    },
+    {
+      "color": "#c9b6f2",
+      "createdAt": 1791691234805,
+      "id": "mv3ap8mtm3ual",
+      "kind": "notebook",
+      "name": "a1 - lesson 16"
+    },
+    {
+      "color": "#ffb877",
+      "createdAt": 1791691238464,
+      "id": "mv3apbggdv0c3",
+      "kind": "notebook",
+      "name": "a1 - lesson 17"
+    },
+    {
+      "color": "#ffd84d",
+      "createdAt": 1791691276087,
+      "id": "mv3aq4hj4cp4j",
+      "kind": "notebook",
+      "name": "a1 - lesson 18"
+    },
+    {
+      "color": "#9cc9f5",
+      "createdAt": 1791691278176,
+      "id": "mv3aq63k2biw9",
+      "kind": "notebook",
+      "name": "a1 - lesson 19"
+    },
+    {
+      "color": "#f5b0b0",
+      "createdAt": 1791691280272,
+      "id": "mv3aq7pscj971",
+      "kind": "notebook",
+      "name": "a1 - lesson 20"
+    },
+    {
+      "color": "#a8dcc1",
+      "createdAt": 1791691281965,
+      "id": "mv3aq90t6ho7m",
+      "kind": "notebook",
+      "name": "a1 - lesson 21"
+    },
+    {
+      "color": "#c9b6f2",
+      "createdAt": 1791691283596,
+      "id": "mv3aqaa4zahmz",
+      "kind": "notebook",
+      "name": "a1 - lesson 22"
+    },
+    {
+      "color": "#ffb877",
+      "createdAt": 1791691285773,
+      "id": "mv3aqbylj54o3",
+      "kind": "notebook",
+      "name": "a1 - lesson 23"
+    },
+    {
+      "color": "#ffd84d",
+      "createdAt": 1791691287724,
+      "id": "mv3aqdgsde6dh",
+      "kind": "notebook",
+      "name": "a1 - lesson 24"
+    },
+    {
+      "color": "#9cc9f5",
+      "createdAt": 1791691289762,
+      "id": "mv3aqf1ep72e1",
+      "kind": "notebook",
+      "name": "a1 - lesson 25"
+    },
+    {
+      "color": "#f5b0b0",
+      "createdAt": 1791691291777,
+      "id": "mv3aqgldrb7st",
+      "kind": "notebook",
+      "name": "a1 - lesson 26"
+    },
+    {
+      "color": "#a8dcc1",
+      "createdAt": 1791691293984,
+      "id": "mv3aqiao9r7ur",
+      "kind": "notebook",
+      "name": "a1 - lesson 27"
+    },
+    {
+      "color": "#c9b6f2",
+      "createdAt": 1791691296317,
+      "id": "mv3aqk3hxih3n",
+      "kind": "notebook",
+      "name": "a1 - lesson 28"
+    },
+    {
+      "color": "#ffb877",
+      "createdAt": 1791691299292,
+      "id": "mv3aqme4m9naa",
+      "kind": "notebook",
+      "name": "a1 - lesson 29"
+    },
+    {
+      "color": "#ffd84d",
+      "createdAt": 1791691301879,
+      "id": "mv3aqodzd12rz",
+      "kind": "notebook",
+      "name": "a1 - lesson 30"
+    },
+    {
+      "color": "#9cc9f5",
+      "createdAt": 1791691304213,
+      "id": "mv3aqq6t7ds45",
+      "kind": "notebook",
+      "name": "a1 - lesson 31"
+    },
+    {
+      "color": "#f5b0b0",
+      "createdAt": 1791691306442,
+      "id": "mv3aqrwqnu898",
+      "kind": "notebook",
+      "name": "a1 - lesson 32"
+    },
+    {
+      "color": "#a8dcc1",
+      "createdAt": 1791691308776,
+      "id": "mv3aqtpkq1t7e",
+      "kind": "notebook",
+      "name": "a1 - lesson 33"
+    },
+    {
+      "color": "#c9b6f2",
+      "createdAt": 1791691311278,
+      "id": "mv3aqvn2g77la",
+      "kind": "notebook",
+      "name": "a1 - lesson 34"
+    },
+    {
+      "color": "#ffb877",
+      "createdAt": 1791691313257,
+      "id": "mv3aqx612kyca",
+      "kind": "notebook",
+      "name": "a1 - lesson 35"
     }
   ]
 }
