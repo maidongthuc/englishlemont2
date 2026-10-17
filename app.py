@@ -1,4 +1,5 @@
 from io import BytesIO
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -72,7 +73,8 @@ def api_data():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    # Without faster-whisper (e.g. on Vercel) the page uses the browser's own speech recognition instead
+    return render_template("index.html", whisper_available=importlib.util.find_spec("faster_whisper") is not None)
 
 
 @app.route("/speak", methods=["POST"])
