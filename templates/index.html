@@ -872,8 +872,29 @@
   const normalize = (s, sep = "") => String(s).toLowerCase()
     .replace(/[^\p{L}\p{N}\s]/gu, sep)
     .replace(/\s+/g, " ").trim();
+  // Số viết bằng chữ số hay bằng chữ đều đúng: nhận dạng giọng nói nghe "one minute" sẽ viết "1 minute"
+  const ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
+    "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+  const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+  const ORDINALS = { one: "first", two: "second", three: "third", five: "fifth", eight: "eighth", nine: "ninth", twelve: "twelfth" };
+  function numberWords(n) {
+    if (n < 20) return ONES[n];
+    if (n < 100) return TENS[Math.floor(n / 10)] + (n % 10 ? " " + ONES[n % 10] : "");
+    if (n < 1000) return ONES[Math.floor(n / 100)] + " hundred" + (n % 100 ? " " + numberWords(n % 100) : "");
+    for (const [size, name] of [[1e9, "billion"], [1e6, "million"], [1e3, "thousand"]]) {
+      if (n >= size) return numberWords(Math.floor(n / size)) + " " + name + (n % size ? " " + numberWords(n % size) : "");
+    }
+  }
+  // "21st" -> "twenty first", "1,000" (đã bỏ dấu phẩy) -> "one thousand"; "one hundred and five" = "one hundred five"
+  const spellNumbers = (s) => s
+    .replace(/\b(\d{1,12})(st|nd|rd|th)?\b/g, (m, digits, suffix) => {
+      const words = numberWords(Number(digits));
+      if (!suffix) return words;
+      return words.replace(/\w+$/, (w) => ORDINALS[w] || (w.endsWith("y") ? w.slice(0, -1) + "ieth" : w + "th"));
+    })
+    .replace(/\b(hundred|thousand|million|billion) and\b/g, "$1");
   // Khoảng trắng cũng không bắt lỗi: "school work" = "schoolwork"
-  const squash = (s) => normalize(s).replace(/ /g, "");
+  const squash = (s) => spellNumbers(normalize(s)).replace(/ /g, "");
   const isCorrect = (ans, term) => squash(ans) === squash(term);
 
   function shuffle(arr) {
