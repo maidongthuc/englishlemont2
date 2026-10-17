@@ -1,5 +1,7 @@
 # Local install with speech recognition (not used by Vercel)
 -r requirements.txt
+# Reads SUPABASE_URL and SUPABASE_KEY from .env
+python-dotenv
 faster-whisper
 # faster-whisper 1.2.1 calls av.open(metadata_errors=...), which PyAV 15+ removed
 av<15

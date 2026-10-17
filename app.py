@@ -1,9 +1,7 @@
-from datetime import datetime, timezone
 from io import BytesIO
 import importlib.util
 import json
 import os
-from pathlib import Path
 import threading
 import urllib.error
 import urllib.request
@@ -12,8 +10,13 @@ from flask import Flask, jsonify, render_template, request, send_file
 from gtts import gTTS
 from gtts.tts import gTTSError
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 app = Flask(__name__)
-DATA_FILE = Path(app.root_path) / "data.json"
 
 # Accents for English come from different Google domains (tld)
 ALLOWED_LANGS = {"en", "vi"}
@@ -37,59 +40,42 @@ def get_whisper():
         return _whisper
 
 
-# On Vercel the app's files are read-only, so data.json can't be saved there.
-# When SUPABASE_URL and SUPABASE_KEY are set, the same JSON is kept in Supabase (table app_data, see supabase.sql).
-# The first time, it starts from the data.json in the repo. Without them, data.json is used (local).
-ON_VERCEL = os.environ.get("VERCEL") == "1"
+# All notebooks and sentences live in Supabase (tables notebooks and items, see supabase.sql).
+# On Vercel set SUPABASE_URL and SUPABASE_KEY under Settings > Environment Variables; locally put them in .env
 SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY") or ""
-USE_SUPABASE = bool(SUPABASE_URL and SUPABASE_KEY)
-DATA_ROW_ID = "main"
 
 
-def supabase_request(method, query="", body=None, prefer=None):
-    headers = {"apikey": SUPABASE_KEY, "Content-Type": "application/json"}
-    if prefer:
-        headers["Prefer"] = prefer
+def supabase_rpc(function, body):
     req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/app_data{query}",
-        data=None if body is None else json.dumps(body, ensure_ascii=False).encode("utf-8"),
-        headers=headers,
-        method=method,
+        f"{SUPABASE_URL}/rest/v1/rpc/{function}",
+        data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+        headers={"apikey": SUPABASE_KEY, "Content-Type": "application/json"},
+        method="POST",
     )
-    with urllib.request.urlopen(req, timeout=10) as res:
+    with urllib.request.urlopen(req, timeout=15) as res:
         text = res.read().decode("utf-8")
         return json.loads(text) if text else None
 
 
 def storage_error(action, e):
-    if not USE_SUPABASE and ON_VERCEL:
-        return DataError("No database is connected. In Vercel add SUPABASE_URL and SUPABASE_KEY "
-                         "under Settings > Environment Variables, then redeploy.")
     if isinstance(e, urllib.error.HTTPError):
         detail = e.read().decode("utf-8", "replace")[:300]
-        if e.code == 404 or "PGRST205" in detail:
-            return DataError("The app_data table is missing in Supabase. Run supabase.sql in the Supabase SQL Editor.")
+        if e.code == 404 or "PGRST202" in detail:
+            return DataError("The database tables are missing in Supabase. Run supabase.sql in the Supabase SQL Editor.")
         if e.code in (401, 403) or "42501" in detail:
-            return DataError("Supabase refused the request. Check SUPABASE_KEY and the table's access policy (supabase.sql).")
+            return DataError("Supabase refused the request. Check SUPABASE_KEY and the tables' access policy (supabase.sql).")
+        if "23503" in detail:
+            return DataError(f"Could not {action} the data: a sentence points to a notebook that doesn't exist.")
         return DataError(f"Could not {action} the data: Supabase error {e.code} {detail}")
     return DataError(f"Could not {action} the data ({type(e).__name__}).")
 
 
-def read_data_file():
-    if not DATA_FILE.exists():
-        return {"items": [], "books": []}
-    with DATA_FILE.open("r", encoding="utf-8") as f:
-        return json.load(f)
-
-
 def load_data():
+    if not (SUPABASE_URL and SUPABASE_KEY):
+        raise DataError(NO_DATABASE)
     try:
-        if USE_SUPABASE:
-            rows = supabase_request("GET", f"?id=eq.{DATA_ROW_ID}&select=data")
-            data = rows[0]["data"] if rows else read_data_file()
-        else:
-            data = read_data_file()
+        data = supabase_rpc("load_app_data", {})
     except Exception as e:
         # Raise instead of returning empty data: the page would then save the empty list over everything
         raise storage_error("load", e)
@@ -101,25 +87,18 @@ def load_data():
 
 
 def save_data(data):
-    payload = {
-        "items": data.get("items", []),
-        "books": data.get("books", []),
-    }
+    if not (SUPABASE_URL and SUPABASE_KEY):
+        raise DataError(NO_DATABASE)
+    books = data.get("books") if isinstance(data.get("books"), list) else []
+    items = data.get("items") if isinstance(data.get("items"), list) else []
     try:
-        if USE_SUPABASE:
-            updated_at = datetime.now(timezone.utc).isoformat()
-            supabase_request("POST", body={"id": DATA_ROW_ID, "data": payload, "updated_at": updated_at},
-                             prefer="resolution=merge-duplicates,return=minimal")
-            return
-        if ON_VERCEL:
-            raise OSError("Vercel's files are read-only")
-        # Write a temp file first, then swap it in: a crash mid-write can't leave a half-written data.json
-        tmp = DATA_FILE.with_suffix(".json.tmp")
-        with tmp.open("w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
-        os.replace(tmp, DATA_FILE)
+        supabase_rpc("save_app_data", {"p_books": books, "p_items": items})
     except Exception as e:
         raise storage_error("save", e)
+
+
+NO_DATABASE = ("No database is connected. Set SUPABASE_URL and SUPABASE_KEY "
+               "(Vercel: Settings > Environment Variables, then redeploy; locally: the .env file).")
 
 
 class DataError(Exception):
