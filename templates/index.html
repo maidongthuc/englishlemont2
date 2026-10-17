@@ -406,11 +406,15 @@
       if (!response.ok) throw new Error("Failed to load data");
       normalizeData(await response.json());
     } catch {
+      // Tải không được thì không cho lưu: lưu danh sách rỗng sẽ xoá hết dữ liệu trên server
+      loadFailed = true;
       normalizeData({ items: [], books: [] });
     }
   }
 
+  let loadFailed = false;
   async function saveData() {
+    if (loadFailed) throw new Error("Data was not loaded");
     try {
       const response = await fetch("/api/data", {
         method: "POST",
@@ -1306,8 +1310,11 @@
   function renderAll() { currentBook ? renderBook() : renderShelf(); }
 
   await loadData();
+  if (loadFailed) {
+    showModal({ title: "Could not load your data", html: "Your notebooks could not be loaded, so nothing will be saved. Reload the page to try again.", okText: "OK", alert: true });
+  }
   const changed = migrate();
-  if (changed.length) await saveData();
+  if (changed.length) await saveData().catch(() => {});
   if (currentBook && !books.some(b => b.id === currentBook)) currentBook = null;
   renderAll();
 })();

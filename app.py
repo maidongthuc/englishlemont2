@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import threading
+import urllib.request
 
 from flask import Flask, jsonify, render_template, request, send_file
 from gtts import gTTS
@@ -34,14 +35,41 @@ def get_whisper():
         return _whisper
 
 
-def load_data():
+# On Vercel the app's files are read-only, so data.json can't be saved there.
+# When a Redis store is connected (Vercel > Storage > Upstash Redis), the same JSON is kept in Redis instead.
+# The first time, it starts from the data.json in the repo.
+REDIS_URL = os.environ.get("KV_REST_API_URL") or os.environ.get("UPSTASH_REDIS_REST_URL")
+REDIS_TOKEN = os.environ.get("KV_REST_API_TOKEN") or os.environ.get("UPSTASH_REDIS_REST_TOKEN")
+REDIS_KEY = "data.json"
+
+
+def redis(*command):
+    req = urllib.request.Request(
+        REDIS_URL,
+        data=json.dumps(command).encode("utf-8"),
+        headers={"Authorization": f"Bearer {REDIS_TOKEN}", "Content-Type": "application/json"},
+    )
+    with urllib.request.urlopen(req, timeout=10) as res:
+        return json.load(res)["result"]
+
+
+def read_data_file():
     if not DATA_FILE.exists():
         return {"items": [], "books": []}
+    with DATA_FILE.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_data():
     try:
-        with DATA_FILE.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-    except (OSError, json.JSONDecodeError):
-        return {"items": [], "books": []}
+        if REDIS_URL and REDIS_TOKEN:
+            stored = redis("GET", REDIS_KEY)
+            data = json.loads(stored) if stored is not None else read_data_file()
+        else:
+            data = read_data_file()
+    except (OSError, ValueError, KeyError):
+        # Raise instead of returning empty data: the page would then save the empty list over everything
+        raise DataError("Could not load the saved data.")
     if not isinstance(data, dict):
         return {"items": [], "books": []}
     items = data.get("items") if isinstance(data.get("items"), list) else []
@@ -54,21 +82,37 @@ def save_data(data):
         "items": data.get("items", []),
         "books": data.get("books", []),
     }
-    with DATA_FILE.open("w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    try:
+        if REDIS_URL and REDIS_TOKEN:
+            redis("SET", REDIS_KEY, json.dumps(payload, ensure_ascii=False))
+            return
+        # Write a temp file first, then swap it in: a crash mid-write can't leave a half-written data.json
+        tmp = DATA_FILE.with_suffix(".json.tmp")
+        with tmp.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, DATA_FILE)
+    except (OSError, ValueError, KeyError):
+        raise DataError("Could not save the data.")
+
+
+class DataError(Exception):
+    pass
 
 
 @app.route("/api/data", methods=["GET", "POST"])
 def api_data():
-    if request.method == "GET":
-        return jsonify(load_data())
+    try:
+        if request.method == "GET":
+            return jsonify(load_data())
 
-    data = request.get_json(silent=True) or {}
-    if not isinstance(data, dict):
-        return jsonify(error="Invalid JSON payload."), 400
+        data = request.get_json(silent=True) or {}
+        if not isinstance(data, dict):
+            return jsonify(error="Invalid JSON payload."), 400
 
-    save_data(data)
-    return jsonify(success=True)
+        save_data(data)
+        return jsonify(success=True)
+    except DataError as e:
+        return jsonify(error=str(e)), 503
 
 
 @app.route("/")
