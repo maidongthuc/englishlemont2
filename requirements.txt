@@ -1,0 +1,5 @@
+flask
+gTTS
+faster-whisper
+# faster-whisper 1.2.1 calls av.open(metadata_errors=...), which PyAV 15+ removed
+av<15

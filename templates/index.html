@@ -115,6 +115,17 @@
   }
   .label-title { font-family: "Fraunces", Georgia, serif; font-size: 1.15rem; line-height: 1.2; overflow-wrap: anywhere; }
   .label-count { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+  .status { display: inline-block; margin-top: 6px; padding: 0 8px; border-radius: 999px; font-size: .8rem; font-weight: 700; }
+  .status.done { background: #e6f5ec; color: #2e7d4f; }
+  .status.doing { background: #fff1d6; color: #9a5b00; }
+  .status.todo { background: #eef1f6; color: var(--muted); }
+  .progress-row { margin-top: 10px; font-size: .95rem; color: var(--muted); }
+  .progress-row .status { margin: 0 4px 0 0; }
+  .badges { display: inline-flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; font-weight: 400; }
+  .badge { padding: 0 7px; border-radius: 999px; font-size: .75rem; font-weight: 700; white-space: nowrap; }
+  .badge.done { background: #e6f5ec; color: #2e7d4f; }
+  .badge.wrong { background: #fdecea; color: var(--danger); }
+  .item > button.sentence .text { flex: 1; }
   .empty { text-align: center; color: var(--muted); padding: 28px 0; margin: 0; }
 
   /* ---------- Inside a notebook ---------- */
@@ -185,13 +196,18 @@
     background: #fdecea; color: var(--danger); font-size: .8rem; font-weight: 700;
   }
   .feedback .row { margin-top: 8px; }
+  .speak-row { margin: 0 0 14px; }
+  .btn.rec { background: var(--danger); color: #fff; }
+  .rec-dot { width: 10px; height: 10px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
+  @keyframes blink { 50% { opacity: .2; } }
+  #learn-input[readonly] { color: var(--ink); cursor: default; }
 
   @media (max-width: 560px) {
     .sheet { padding-left: 56px; }
     .sheet::before { left: 40px; }
     .shelf { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   }
-  @media (prefers-reduced-motion: reduce) { .btn, .book { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .btn, .book { transition: none; } .rec-dot { animation: none; } }
 </style>
 </head>
 <body>
@@ -231,11 +247,16 @@
         <div class="row">
           <button class="btn learn-btn" id="learn-book"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>Learn</button>
           <button class="btn learn-btn" id="listen-book"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>Listen &amp; type</button>
+          <button class="btn learn-btn" id="speak-book"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></svg>Speak</button>
           <label class="switch">
             <input type="checkbox" id="learn-random" role="switch">
             <span class="track" aria-hidden="true"></span>
             Random
           </label>
+        </div>
+        <div class="row progress-row">
+          <span id="book-progress"></span>
+          <button type="button" class="icon-btn" id="reset-progress">Reset progress</button>
         </div>
       </div>
       <div class="row">
@@ -297,7 +318,7 @@
         <button type="button" class="btn" id="learn-play" title="Press Tab to replay">▶ Play (Tab)</button>
         <button type="button" class="btn ghost" id="learn-play-slow">Play slowly</button>
       </div>
-      <p class="prompt-label hint-head">
+      <p class="prompt-label hint-head" id="learn-hint-head">
         <span><span id="learn-hint-text">Hint · </span><span id="learn-mask-count"></span></span>
         <span class="row">
           <button type="button" class="icon-btn" id="learn-hint-letter">Hint a letter</button>
@@ -306,10 +327,15 @@
       </p>
       <div class="mask" id="learn-mask" aria-live="polite"></div>
       <form id="learn-form" autocomplete="off">
-        <label for="learn-input">Your answer (English)</label>
+        <label for="learn-input" id="learn-input-label">Your answer (English)</label>
         <input type="text" id="learn-input" autocapitalize="off" spellcheck="false">
+        <div class="speak-row" id="speak-box" hidden>
+          <p class="msg" id="speak-msg" role="status"></p>
+        </div>
         <div class="row">
+          <button type="button" class="btn learn-btn" id="learn-record" hidden></button>
           <button type="submit" class="btn" id="learn-check">Check</button>
+          <button type="button" class="btn ghost" id="learn-mark-ok" hidden>✓ Mark correct</button>
           <button type="button" class="btn ghost" id="learn-skip">Show answer</button>
           <button type="button" class="btn" id="learn-next" hidden>Next ›</button>
         </div>
@@ -343,7 +369,7 @@
  (async () => {
   const COLORS = ["#ffd84d", "#9cc9f5", "#f5b0b0", "#a8dcc1", "#c9b6f2", "#ffb877"];
 
-  let items = [];   // {id, term, meaning, notebookId, createdAt}
+  let items = [];   // {id, term, meaning, notebookId, createdAt, progress?: {meaning?, listen?: "done"|"wrong"}}
   let books = [];   // {id, kind:"notebook", name, color, createdAt}
   let currentBook = null, editingId = null, openId = null;
 
@@ -418,12 +444,12 @@
 
   /* ---------- Popup (thay cho confirm/alert của trình duyệt) ---------- */
   // Trả về true nếu bấm nút OK, false nếu Cancel / Esc / bấm ra ngoài
-  function showModal({ title, html, okText = "OK", alert = false }) {
+  function showModal({ title, html, okText = "OK", alert = false, danger = !alert }) {
     const dlg = $("modal");
     $("modal-title").textContent = title;
     $("modal-text").innerHTML = html;
     $("modal-ok").textContent = okText;
-    $("modal-ok").classList.toggle("danger-btn", !alert);
+    $("modal-ok").classList.toggle("danger-btn", danger);
     $("modal-cancel").hidden = alert;
     dlg.returnValue = "";
     return new Promise(resolve => {
@@ -438,6 +464,19 @@
     if (e.target === $("modal") && outside) $("modal").close("cancel");
   });
 
+  /* ---------- Tiến độ ---------- */
+  // Mỗi câu có trạng thái riêng cho Learn (meaning), Listen và Speak: "done" = đúng ngay lần đầu, "wrong" = sai, không có = chưa làm
+  const MODES = ["meaning", "listen", "speak"];
+  const MODE_NAMES = { meaning: "Learn", listen: "Listen", speak: "Speak" };
+  const stateOf = (it, mode) => it.progress?.[mode];
+  const isPending = (it, mode) => stateOf(it, mode) !== "done";
+  function bookStatus(list) {
+    const slots = list.flatMap(it => MODES.map(m => stateOf(it, m)));
+    if (list.length && slots.every(x => x === "done")) return { cls: "done", text: "Done" };
+    if (slots.some(Boolean)) return { cls: "doing", text: "In progress" };
+    return { cls: "todo", text: "Not started" };
+  }
+
   /* ---------- Giá sổ tay ---------- */
   function renderShelf() {
     const shelf = $("shelf");
@@ -447,12 +486,14 @@
     }
     const sorted = [...books].sort((a, b) => a.name.localeCompare(b.name, "vi", { sensitivity: "base", numeric: true }));
     shelf.innerHTML = sorted.map(b => {
-      const n = items.filter(it => it.notebookId === b.id).length;
+      const mine = items.filter(it => it.notebookId === b.id), n = mine.length;
+      const st = bookStatus(mine);
       return `
         <button class="book" data-id="${b.id}" style="background:${esc(b.color)}" aria-label="Open notebook ${esc(b.name)}">
           <span class="label">
             <span class="label-title">${esc(b.name)}</span>
             <span class="label-count" style="display:block">${n} ${n === 1 ? "sentence" : "sentences"}</span>
+            <span class="status ${st.cls}">${st.text}</span>
           </span>
         </button>`;
     }).join("");
@@ -691,6 +732,15 @@
   });
   $("cancel-btn").addEventListener("click", () => { resetForm(); showMsg(""); });
 
+  function badges(it) {
+    const html = MODES.map(m => [m, MODE_NAMES[m]]).map(([m, name]) => {
+      const x = stateOf(it, m);
+      return x === "done" ? `<span class="badge done">${name} ✓</span>`
+        : x === "wrong" ? `<span class="badge wrong">${name} ✗</span>` : "";
+    }).join("");
+    return html ? `<span class="badges">${html}</span>` : "";
+  }
+
   function renderBook() {
     const b = books.find(x => x.id === currentBook);
     if (!b) { closeBook(); return; }
@@ -702,6 +752,13 @@
     const shown = mine
       .filter(it => !q || it.term.toLowerCase().includes(q) || it.meaning.toLowerCase().includes(q));
     $("count").textContent = mine.length ? `${mine.length} ${mine.length === 1 ? "sentence" : "sentences"}` : "";
+    const doneIn = (m) => mine.filter(it => stateOf(it, m) === "done").length;
+    const wrong = mine.filter(it => MODES.some(m => stateOf(it, m) === "wrong")).length;
+    const st = bookStatus(mine);
+    $("book-progress").innerHTML = mine.length
+      ? `<span class="status ${st.cls}">${st.text}</span> Learn ${doneIn("meaning")}/${mine.length} · Listen ${doneIn("listen")}/${mine.length} · Speak ${doneIn("speak")}/${mine.length}${wrong ? ` · ${wrong} to retry` : ""}`
+      : "";
+    $("reset-progress").hidden = !mine.some(it => it.progress);
 
     if (!mine.length) { $("list").innerHTML = `<p class="empty">This notebook is empty. Add your first sentence above.</p>`; return; }
     if (!shown.length) { $("list").innerHTML = `<p class="empty">No sentences match. Try a different search.</p>`; return; }
@@ -712,7 +769,7 @@
           const open = it.id === openId;
           return `
           <li class="item${open ? " open" : ""}" data-id="${it.id}">
-            <button class="sentence" aria-expanded="${open}">${esc(it.term)}</button>
+            <button class="sentence" aria-expanded="${open}"><span class="text">${esc(it.term)}</span>${badges(it)}</button>
             <div class="detail" ${open ? "" : "hidden"}>
               <p class="meaning">${esc(it.meaning)}</p>
               <div class="row">
@@ -742,6 +799,25 @@
     if (act === "delete") deleteSentence(it);
   });
   $("search").addEventListener("input", renderBook);
+
+  $("reset-progress").addEventListener("click", async () => {
+    const b = books.find(x => x.id === currentBook); if (!b) return;
+    const ok = await showModal({
+      title: "Reset progress?",
+      html: `All sentences in this notebook will be marked as not done, for Learn, Listen and Speak.<span class="quote">${esc(b.name)}</span>`,
+      okText: "Reset",
+    });
+    if (!ok) return;
+    const mine = items.filter(it => it.notebookId === currentBook);
+    const saved = mine.map(it => it.progress);
+    mine.forEach(it => delete it.progress);
+    try { await persist(); }
+    catch {
+      mine.forEach((it, i) => { if (saved[i]) it.progress = saved[i]; });
+      await showModal({ title: "Could not reset", html: "The progress could not be reset. Try again.", okText: "OK", alert: true });
+    }
+    renderBook();
+  });
 
   async function deleteSentence(it) {
     const ok = await showModal({
@@ -787,7 +863,7 @@
     } catch {}
   }
 
-  let learnMode = "meaning"; // "meaning": xem nghĩa rồi gõ câu; "listen": nghe rồi gõ câu
+  let learnMode = "meaning"; // "meaning": xem nghĩa rồi gõ câu; "listen": nghe rồi gõ câu; "speak": đọc to câu tiếng Anh
   let queue = [], qIndex = 0, total = 0, done = 0, score = 0, mistakes = [], answered = false;
 
   // So sánh không phân biệt hoa thường, dấu câu và khoảng trắng thừa
@@ -796,8 +872,9 @@
   const normalize = (s, sep = "") => String(s).toLowerCase()
     .replace(/[^\p{L}\p{N}\s]/gu, sep)
     .replace(/\s+/g, " ").trim();
-  const isCorrect = (ans, term) =>
-    normalize(ans) === normalize(term) || normalize(ans, " ") === normalize(term, " ");
+  // Khoảng trắng cũng không bắt lỗi: "school work" = "schoolwork"
+  const squash = (s) => normalize(s).replace(/ /g, "");
+  const isCorrect = (ans, term) => squash(ans) === squash(term);
 
   function shuffle(arr) {
     const a = [...arr];
@@ -825,15 +902,22 @@
     const b = books.find(x => x.id === currentBook); if (!b) return;
     if (!list.length) { alert("This notebook has no sentences to learn yet."); return; }
     learnMode = mode;
-    const listen = mode === "listen";
-    $("learn-intro").textContent = listen
-      ? "Listen to the sentence, then type what you hear."
+    const listen = mode === "listen", speaking = mode === "speak";
+    $("learn-intro").textContent = listen ? "Listen to the sentence, then type what you hear."
+      : speaking ? "Read the English sentence out loud."
       : "Read the meaning, then type the English sentence.";
-    $("learn-label").textContent = listen ? "Listen" : "Meaning";
+    $("learn-input").readOnly = speaking;
+    $("learn-input-label").textContent = speaking ? "What you said" : "Your answer (English)";
+    $("learn-check").hidden = speaking;
+    $("learn-record").hidden = !speaking;
+    $("speak-box").hidden = !speaking;
+    $("learn-label").textContent = listen ? "Listen" : speaking ? "Say this sentence" : "Meaning";
+    $("learn-skip").textContent = speaking ? "Skip" : "Show answer";
+    applyHint();
     $("learn-prompt").hidden = listen;
     $("learn-audio").hidden = !listen;
     queue = arrange(list); qIndex = 0; total = list.length; done = 0; score = 0; mistakes = [];
-    $("learn-title").innerHTML = `<span class="hl" style="background:linear-gradient(transparent 55%, ${esc(b.color)} 55%)">${listen ? "Listen" : "Learn"}: ${esc(b.name)}</span>`;
+    $("learn-title").innerHTML = `<span class="hl" style="background:linear-gradient(transparent 55%, ${esc(b.color)} 55%)">${MODE_NAMES[mode]}: ${esc(b.name)}</span>`;
     $("view-book").hidden = true; $("view-learn").hidden = false;
     $("learn-card").hidden = false; $("learn-done").hidden = true;
     showQuestion();
@@ -847,8 +931,11 @@
   // Ẩn/hiện gợi ý, nhớ lựa chọn trên trình duyệt này
   let hintOn = true;
   try { hintOn = localStorage.getItem("hintOn") !== "0"; } catch {}
+  // Chế độ Speak đã hiện sẵn câu tiếng Anh nên không cần gợi ý
   function applyHint() {
-    $("learn-mask").hidden = !hintOn;
+    const noHint = learnMode === "speak";
+    $("learn-hint-head").hidden = noHint;
+    $("learn-mask").hidden = noHint || !hintOn;
     $("learn-hint-text").hidden = !hintOn;
     $("learn-mask-count").hidden = !hintOn;
     $("learn-hint-letter").hidden = !hintOn;
@@ -901,6 +988,109 @@
   });
   $("learn-input").addEventListener("input", () => { if (!answered) renderMask(); });
 
+  /* ---------- Nói: ghi âm rồi gửi lên server (Whisper) để chuyển thành chữ ---------- */
+  // Nói thử bao nhiêu lần cũng được; Whisper nghe nhầm thì bấm "Mark correct" để tính là đúng và qua câu
+  const MAX_RECORD_MS = 15000;
+  let recorder = null, recStream = null, recTimer = null, recState = "idle"; // idle | recording | working
+  let recStarting = false;
+
+  function setSpeakMsg(text, isError = false) {
+    $("speak-msg").textContent = text;
+    $("speak-msg").classList.toggle("error", isError);
+  }
+  function setRecordButton() {
+    const b = $("learn-record");
+    b.classList.toggle("rec", recState === "recording");
+    b.disabled = recState === "working";
+    b.innerHTML = recState === "recording" ? `<span class="rec-dot" aria-hidden="true"></span>Stop (Enter)`
+      : recState === "working" ? "Listening…"
+      : "🎤 Record (Enter)";
+  }
+
+  async function startRecording() {
+    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+      setSpeakMsg("This browser can't record. Open the app at http://localhost:5000 (microphones need localhost or https).", true);
+      return;
+    }
+    const it = queue[qIndex];
+    recStarting = true;
+    try {
+      recStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      setSpeakMsg("Microphone access was blocked. Allow the microphone for this page and try again.", true);
+      return;
+    } finally {
+      recStarting = false;
+    }
+    // Trong lúc chờ cho phép micro mà đã chuyển câu / thoát thì thôi
+    if (answered || queue[qIndex] !== it || $("view-learn").hidden) { releaseMic(); return; }
+    if (synth) synth.cancel();
+    const chunks = [];
+    const rec = new MediaRecorder(recStream);
+    recorder = rec;
+    rec.ondataavailable = (e) => { if (e.data.size) chunks.push(e.data); };
+    rec.onstop = () => {
+      releaseMic();
+      if (rec.discard) return;
+      transcribe(new Blob(chunks, { type: rec.mimeType || "audio/webm" }));
+    };
+    rec.start();
+    recState = "recording";
+    setRecordButton();
+    setSpeakMsg("Recording… say the sentence, then press Enter.");
+    recTimer = setTimeout(() => stopRecording(), MAX_RECORD_MS);
+  }
+
+  function releaseMic() {
+    clearTimeout(recTimer);
+    recStream?.getTracks().forEach(t => t.stop());
+    recStream = null;
+  }
+
+  // discard = true: dừng mà không gửi đi (chuyển câu, thoát chế độ học)
+  function stopRecording(discard = false) {
+    const rec = recorder;
+    recorder = null;
+    if (rec && rec.state !== "inactive") { rec.discard = discard; rec.stop(); }
+    else releaseMic();
+    if (discard) { recState = "idle"; setRecordButton(); }
+  }
+
+  function toggleRecording() {
+    if (answered || recStarting || recState === "working") return;
+    if (recState === "recording") stopRecording();
+    else startRecording();
+  }
+  $("learn-record").addEventListener("click", () => { toggleRecording(); $("learn-input").focus(); });
+
+  async function transcribe(blob) {
+    const it = queue[qIndex];
+    recState = "working";
+    setRecordButton();
+    setSpeakMsg("Checking what you said…");
+    let text = null, error = "";
+    try {
+      const fd = new FormData();
+      fd.append("audio", blob, "speech.webm");
+      const res = await fetch("/transcribe", { method: "POST", body: fd });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) text = data.text || "";
+      else error = data.error || "Speech recognition failed.";
+    } catch {
+      error = "Could not reach the server. Try again.";
+    }
+    recState = "idle";
+    setRecordButton();
+    // Đã chuyển sang câu khác / thoát trong lúc chờ thì bỏ qua kết quả
+    if (answered || queue[qIndex] !== it || $("view-learn").hidden) return;
+    if (text === null) { setSpeakMsg(error, true); return; }
+    if (!text) { setSpeakMsg("I didn't hear anything. Try again a little louder.", true); return; }
+
+    $("learn-input").value = text;
+    if (isCorrect(text, it.term)) { setSpeakMsg(""); reveal(true); return; }
+    setSpeakMsg("Not quite. Check “What you said” and try again, or tap “Mark correct” if you said it right.", true);
+  }
+
   function updateStatus() {
     $("learn-progress").textContent = `Learned ${done} / ${total}`;
     $("learn-score").textContent = `First try: ${score}`;
@@ -913,10 +1103,15 @@
     hinted = new Set();
     updateStatus();
     $("learn-again-tag").hidden = !mistakes.includes(it);
-    $("learn-prompt").textContent = it.meaning;
+    $("learn-prompt").textContent = learnMode === "speak" ? it.term : it.meaning;
     $("learn-input").value = ""; $("learn-input").disabled = false;
-    $("learn-check").hidden = false; $("learn-skip").hidden = false; $("learn-next").hidden = true;
+    $("learn-check").hidden = learnMode === "speak"; $("learn-skip").hidden = false; $("learn-next").hidden = true;
+    $("learn-record").hidden = learnMode !== "speak";
+    $("learn-mark-ok").hidden = learnMode !== "speak";
     $("learn-feedback").hidden = true;
+    stopRecording(true);
+    setSpeakMsg(learnMode === "speak" ? "Press Enter or tap “Record” and say the sentence." : "");
+    setRecordButton();
     renderMask();
     $("learn-input").focus();
     if (learnMode === "listen") speak(it.term);
@@ -925,6 +1120,11 @@
   function reveal(correct) {
     const it = queue[qIndex];
     answered = true;
+    // Lần trả lời đầu tiên của câu trong lượt này quyết định trạng thái lưu lại
+    if (!mistakes.includes(it)) {
+      it.progress = { ...it.progress, [learnMode]: correct ? "done" : "wrong" };
+      persist().catch(() => {});
+    }
     if (correct) {
       playCorrect();
       // Nhạc xong thì đọc câu
@@ -946,11 +1146,15 @@
       ? `<div>✓ Correct!</div><div class="answer">${esc(it.term)}</div>`
       : `<div>✗ The answer is:</div><div class="answer">${esc(it.term)}</div><div class="hint">This sentence will come back later until you get it right.</div>`;
     if (learnMode === "listen") fb.insertAdjacentHTML("beforeend", `<div class="hint">${esc(it.meaning)}</div>`);
+    if (learnMode === "speak" && !correct && $("learn-input").value) fb.insertAdjacentHTML("beforeend", `<div class="hint">You said: ${esc($("learn-input").value)}</div>`);
     fb.insertAdjacentHTML("beforeend", `<div class="row"><button type="button" class="icon-btn" id="learn-listen">Listen</button></div>`);
     $("learn-listen").addEventListener("click", () => speak(it.term));
     fb.hidden = false;
     $("learn-input").disabled = true;
     $("learn-check").hidden = true; $("learn-skip").hidden = true; $("learn-next").hidden = false;
+    $("learn-record").hidden = true; $("learn-mark-ok").hidden = true;
+    stopRecording(true);
+    setSpeakMsg("");
     $("learn-next").textContent = qIndex + 1 < queue.length ? "Next ›" : "See result";
     $("learn-next").focus();
   }
@@ -958,11 +1162,13 @@
   $("learn-form").addEventListener("submit", (e) => {
     e.preventDefault();
     if (answered) { nextQuestion(); return; }
+    if (learnMode === "speak") { toggleRecording(); return; }
     const ans = $("learn-input").value;
     if (!ans.trim()) { $("learn-input").focus(); return; }
     reveal(isCorrect(ans, queue[qIndex].term));
   });
   $("learn-skip").addEventListener("click", () => { if (!answered) reveal(false); });
+  $("learn-mark-ok").addEventListener("click", () => { if (!answered) reveal(true); });
 
   function nextQuestion() {
     qIndex++;
@@ -975,8 +1181,25 @@
   }
   $("learn-next").addEventListener("click", nextQuestion);
 
-  $("learn-book").addEventListener("click", () => startLearn(items.filter(it => it.notebookId === currentBook), "meaning"));
-  $("listen-book").addEventListener("click", () => startLearn(items.filter(it => it.notebookId === currentBook), "listen"));
+  // Chỉ làm các câu chưa làm hoặc làm sai; xong hết thì hỏi có muốn làm lại tất cả không
+  async function startPending(mode) {
+    const mine = items.filter(it => it.notebookId === currentBook);
+    const pending = mine.filter(it => isPending(it, mode));
+    if (mine.length && !pending.length) {
+      const ok = await showModal({
+        title: "All done!",
+        html: `You have finished all ${mine.length} sentences in ${MODE_NAMES[mode]}. Practice them all again?`,
+        okText: "Practice all",
+        danger: false,
+      });
+      if (ok) startLearn(mine, mode);
+      return;
+    }
+    startLearn(pending, mode);
+  }
+  $("learn-book").addEventListener("click", () => startPending("meaning"));
+  $("listen-book").addEventListener("click", () => startPending("listen"));
+  $("speak-book").addEventListener("click", () => startPending("speak"));
   $("learn-play").addEventListener("click", () => { speak(queue[qIndex].term); $("learn-input").focus(); });
   $("learn-play-slow").addEventListener("click", () => { speak(queue[qIndex].term, 0.6); $("learn-input").focus(); });
   // Nhấn Tab để nghe lại câu (chế độ Listen, hoặc sau khi đã hiện đáp án); Shift+Tab vẫn chuyển ô như thường
@@ -992,6 +1215,7 @@
   $("learn-retry").addEventListener("click", () => startLearn(mistakes));
   $("learn-back").addEventListener("click", () => {
     if (synth) synth.cancel();
+    stopRecording(true);
     $("view-learn").hidden = true; $("view-book").hidden = false;
     renderBook();
     window.scrollTo(0, 0);
