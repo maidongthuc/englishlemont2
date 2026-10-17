@@ -4,5 +4,3 @@
 # For local use with speech recognition: pip install -r requirements-local.txt
 flask>=3.0,<4
 gTTS>=2.5,<3
-# Only used when the database gives a redis:// URL instead of Upstash REST
-redis>=5,<7

@@ -37,51 +37,41 @@ def get_whisper():
 
 
 # On Vercel the app's files are read-only, so data.json can't be saved there.
-# When a Redis store is connected (Vercel > Storage > Upstash Redis), the same JSON is kept in Redis instead.
-# The first time, it starts from the data.json in the repo.
+# When SUPABASE_URL and SUPABASE_KEY are set, the same JSON is kept in Supabase (table app_data, see supabase.sql).
+# The first time, it starts from the data.json in the repo. Without them, data.json is used (local).
 ON_VERCEL = os.environ.get("VERCEL") == "1"
-REDIS_KEY = "data.json"
+SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY") or ""
+USE_SUPABASE = bool(SUPABASE_URL and SUPABASE_KEY)
+DATA_ROW_ID = "main"
 
 
-def env_ending(*suffixes):
-    # Vercel may add a custom prefix to the variable names (e.g. STORAGE_KV_REST_API_URL)
-    for suffix in suffixes:
-        for name in sorted(os.environ, key=len):
-            if name.endswith(suffix) and os.environ[name]:
-                return os.environ[name]
-    return None
-
-
-# Upstash answers over HTTPS (no extra package); other Redis stores only give a redis:// URL
-REDIS_REST_URL = env_ending("KV_REST_API_URL", "REDIS_REST_URL")
-REDIS_REST_TOKEN = env_ending("KV_REST_API_TOKEN", "REDIS_REST_TOKEN")
-REDIS_TCP_URL = env_ending("REDIS_URL", "KV_URL")
-USE_REDIS = bool(REDIS_REST_URL and REDIS_REST_TOKEN) or bool(REDIS_TCP_URL)
-_redis_client = None
-
-
-def redis_command(*command):
-    if REDIS_REST_URL and REDIS_REST_TOKEN:
-        req = urllib.request.Request(
-            REDIS_REST_URL,
-            data=json.dumps(command).encode("utf-8"),
-            headers={"Authorization": f"Bearer {REDIS_REST_TOKEN}", "Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=10) as res:
-            return json.load(res)["result"]
-    global _redis_client
-    if _redis_client is None:
-        import redis
-        _redis_client = redis.Redis.from_url(REDIS_TCP_URL, decode_responses=True, socket_timeout=10)
-    return _redis_client.execute_command(*command)
+def supabase_request(method, query="", body=None, prefer=None):
+    headers = {"apikey": SUPABASE_KEY, "Content-Type": "application/json"}
+    if prefer:
+        headers["Prefer"] = prefer
+    req = urllib.request.Request(
+        f"{SUPABASE_URL}/rest/v1/app_data{query}",
+        data=None if body is None else json.dumps(body, ensure_ascii=False).encode("utf-8"),
+        headers=headers,
+        method=method,
+    )
+    with urllib.request.urlopen(req, timeout=10) as res:
+        text = res.read().decode("utf-8")
+        return json.loads(text) if text else None
 
 
 def storage_error(action, e):
-    if not USE_REDIS and ON_VERCEL:
-        return DataError("No database is connected. In Vercel open Storage, connect an Upstash Redis "
-                         "database to this project, then redeploy.")
-    if isinstance(e, urllib.error.HTTPError) and e.code in (401, 403):
-        return DataError(f"Could not {action} the data: the Redis token was refused. Reconnect the database in Vercel.")
+    if not USE_SUPABASE and ON_VERCEL:
+        return DataError("No database is connected. In Vercel add SUPABASE_URL and SUPABASE_KEY "
+                         "under Settings > Environment Variables, then redeploy.")
+    if isinstance(e, urllib.error.HTTPError):
+        detail = e.read().decode("utf-8", "replace")[:300]
+        if e.code == 404 or "PGRST205" in detail:
+            return DataError("The app_data table is missing in Supabase. Run supabase.sql in the Supabase SQL Editor.")
+        if e.code in (401, 403) or "42501" in detail:
+            return DataError("Supabase refused the request. Check SUPABASE_KEY and the table's access policy (supabase.sql).")
+        return DataError(f"Could not {action} the data: Supabase error {e.code} {detail}")
     return DataError(f"Could not {action} the data ({type(e).__name__}).")
 
 
@@ -94,9 +84,9 @@ def read_data_file():
 
 def load_data():
     try:
-        if USE_REDIS:
-            stored = redis_command("GET", REDIS_KEY)
-            data = json.loads(stored) if stored is not None else read_data_file()
+        if USE_SUPABASE:
+            rows = supabase_request("GET", f"?id=eq.{DATA_ROW_ID}&select=data")
+            data = rows[0]["data"] if rows else read_data_file()
         else:
             data = read_data_file()
     except Exception as e:
@@ -115,8 +105,9 @@ def save_data(data):
         "books": data.get("books", []),
     }
     try:
-        if USE_REDIS:
-            redis_command("SET", REDIS_KEY, json.dumps(payload, ensure_ascii=False))
+        if USE_SUPABASE:
+            supabase_request("POST", body={"id": DATA_ROW_ID, "data": payload},
+                             prefer="resolution=merge-duplicates,return=minimal")
             return
         if ON_VERCEL:
             raise OSError("Vercel's files are read-only")
