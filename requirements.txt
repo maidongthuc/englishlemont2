@@ -1,5 +1,6 @@
-flask
-gTTS
-faster-whisper
-# faster-whisper 1.2.1 calls av.open(metadata_errors=...), which PyAV 15+ removed
-av<15
+# Dependencies installed by Vercel.
+# faster-whisper is left out on purpose: it pulls in CTranslate2, PyAV and model files that are too big
+# and too slow for a serverless function. Without it, /transcribe answers 503 and the rest of the app works.
+# For local use with speech recognition: pip install -r requirements-local.txt
+flask>=3.0,<4
+gTTS>=2.5,<3
