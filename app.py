@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from io import BytesIO
 import importlib.util
 import json
@@ -106,7 +107,8 @@ def save_data(data):
     }
     try:
         if USE_SUPABASE:
-            supabase_request("POST", body={"id": DATA_ROW_ID, "data": payload},
+            updated_at = datetime.now(timezone.utc).isoformat()
+            supabase_request("POST", body={"id": DATA_ROW_ID, "data": payload, "updated_at": updated_at},
                              prefer="resolution=merge-duplicates,return=minimal")
             return
         if ON_VERCEL:
