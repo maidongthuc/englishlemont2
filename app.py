@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import threading
+import urllib.error
 import urllib.request
 
 from flask import Flask, jsonify, render_template, request, send_file
@@ -38,19 +39,50 @@ def get_whisper():
 # On Vercel the app's files are read-only, so data.json can't be saved there.
 # When a Redis store is connected (Vercel > Storage > Upstash Redis), the same JSON is kept in Redis instead.
 # The first time, it starts from the data.json in the repo.
-REDIS_URL = os.environ.get("KV_REST_API_URL") or os.environ.get("UPSTASH_REDIS_REST_URL")
-REDIS_TOKEN = os.environ.get("KV_REST_API_TOKEN") or os.environ.get("UPSTASH_REDIS_REST_TOKEN")
+ON_VERCEL = os.environ.get("VERCEL") == "1"
 REDIS_KEY = "data.json"
 
 
-def redis(*command):
-    req = urllib.request.Request(
-        REDIS_URL,
-        data=json.dumps(command).encode("utf-8"),
-        headers={"Authorization": f"Bearer {REDIS_TOKEN}", "Content-Type": "application/json"},
-    )
-    with urllib.request.urlopen(req, timeout=10) as res:
-        return json.load(res)["result"]
+def env_ending(*suffixes):
+    # Vercel may add a custom prefix to the variable names (e.g. STORAGE_KV_REST_API_URL)
+    for suffix in suffixes:
+        for name in sorted(os.environ, key=len):
+            if name.endswith(suffix) and os.environ[name]:
+                return os.environ[name]
+    return None
+
+
+# Upstash answers over HTTPS (no extra package); other Redis stores only give a redis:// URL
+REDIS_REST_URL = env_ending("KV_REST_API_URL", "REDIS_REST_URL")
+REDIS_REST_TOKEN = env_ending("KV_REST_API_TOKEN", "REDIS_REST_TOKEN")
+REDIS_TCP_URL = env_ending("REDIS_URL", "KV_URL")
+USE_REDIS = bool(REDIS_REST_URL and REDIS_REST_TOKEN) or bool(REDIS_TCP_URL)
+_redis_client = None
+
+
+def redis_command(*command):
+    if REDIS_REST_URL and REDIS_REST_TOKEN:
+        req = urllib.request.Request(
+            REDIS_REST_URL,
+            data=json.dumps(command).encode("utf-8"),
+            headers={"Authorization": f"Bearer {REDIS_REST_TOKEN}", "Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=10) as res:
+            return json.load(res)["result"]
+    global _redis_client
+    if _redis_client is None:
+        import redis
+        _redis_client = redis.Redis.from_url(REDIS_TCP_URL, decode_responses=True, socket_timeout=10)
+    return _redis_client.execute_command(*command)
+
+
+def storage_error(action, e):
+    if not USE_REDIS and ON_VERCEL:
+        return DataError("No database is connected. In Vercel open Storage, connect an Upstash Redis "
+                         "database to this project, then redeploy.")
+    if isinstance(e, urllib.error.HTTPError) and e.code in (401, 403):
+        return DataError(f"Could not {action} the data: the Redis token was refused. Reconnect the database in Vercel.")
+    return DataError(f"Could not {action} the data ({type(e).__name__}).")
 
 
 def read_data_file():
@@ -62,14 +94,14 @@ def read_data_file():
 
 def load_data():
     try:
-        if REDIS_URL and REDIS_TOKEN:
-            stored = redis("GET", REDIS_KEY)
+        if USE_REDIS:
+            stored = redis_command("GET", REDIS_KEY)
             data = json.loads(stored) if stored is not None else read_data_file()
         else:
             data = read_data_file()
-    except (OSError, ValueError, KeyError):
+    except Exception as e:
         # Raise instead of returning empty data: the page would then save the empty list over everything
-        raise DataError("Could not load the saved data.")
+        raise storage_error("load", e)
     if not isinstance(data, dict):
         return {"items": [], "books": []}
     items = data.get("items") if isinstance(data.get("items"), list) else []
@@ -83,16 +115,18 @@ def save_data(data):
         "books": data.get("books", []),
     }
     try:
-        if REDIS_URL and REDIS_TOKEN:
-            redis("SET", REDIS_KEY, json.dumps(payload, ensure_ascii=False))
+        if USE_REDIS:
+            redis_command("SET", REDIS_KEY, json.dumps(payload, ensure_ascii=False))
             return
+        if ON_VERCEL:
+            raise OSError("Vercel's files are read-only")
         # Write a temp file first, then swap it in: a crash mid-write can't leave a half-written data.json
         tmp = DATA_FILE.with_suffix(".json.tmp")
         with tmp.open("w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
         os.replace(tmp, DATA_FILE)
-    except (OSError, ValueError, KeyError):
-        raise DataError("Could not save the data.")
+    except Exception as e:
+        raise storage_error("save", e)
 
 
 class DataError(Exception):

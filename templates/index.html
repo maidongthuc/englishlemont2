@@ -413,17 +413,25 @@
   }
 
   let loadFailed = false;
+  let saveError = "";  // lý do server trả về khi lưu lỗi, hiện cho người dùng xem
+  const saveFail = (what) => `Could not save ${what}. ${saveError || "Try again."}`;
   async function saveData() {
-    if (loadFailed) throw new Error("Data was not loaded");
+    saveError = loadFailed ? "Your data was not loaded. Reload the page." : "";
+    if (loadFailed) throw new Error(saveError);
+    let response;
     try {
-      const response = await fetch("/api/data", {
+      response = await fetch("/api/data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items, books }),
       });
-      if (!response.ok) throw new Error("Failed to save data");
     } catch {
-      throw new Error("Failed to save data");
+      saveError = "Could not reach the server.";
+      throw new Error(saveError);
+    }
+    if (!response.ok) {
+      saveError = (await response.json().catch(() => ({}))).error || `Server error ${response.status}.`;
+      throw new Error(saveError);
     }
   }
 
@@ -521,7 +529,7 @@
       renderShelf();
     } catch {
       books = books.filter(x => x.id !== b.id);
-      msg.textContent = "Could not save the notebook. Try again.";
+      msg.textContent = saveFail("the notebook");
       msg.classList.add("error");
     }
   });
@@ -587,7 +595,7 @@
       renderBook();
     } catch {
       b.name = oldName;
-      $("rename-msg").textContent = "Could not save the notebook name. Try again.";
+      $("rename-msg").textContent = saveFail("the notebook name");
     }
   });
 
@@ -681,7 +689,7 @@
     } catch {
       const ids = new Set(added.map(x => x.id));
       items = items.filter(x => !ids.has(x.id));
-      msg.textContent = "Could not save the imported sentences. Try again.";
+      msg.textContent = saveFail("the imported sentences");
       msg.classList.add("error");
     }
   });
@@ -731,7 +739,7 @@
       } else if (createdItem) {
         items = items.filter(x => x.id !== createdItem.id);
       }
-      showMsg("Could not save the sentence.", true);
+      showMsg(saveFail("the sentence"), true);
     }
   });
   $("cancel-btn").addEventListener("click", () => { resetForm(); showMsg(""); });
