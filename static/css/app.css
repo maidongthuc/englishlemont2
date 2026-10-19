@@ -81,9 +81,6 @@ a.icon-btn { text-decoration: none; }
 .btn.danger-btn { background: var(--danger); color: #fff; }
 
 /* ---------- Sign in / account ---------- */
-.login-card { max-width: 460px; margin: 8vh auto 0; text-align: center; }
-.login-card img { display: block; margin: 0 auto 8px; }
-.login-card .intro { margin-bottom: 22px; }
 .google-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--paper); }
 .userbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
 .userbar .user { display: inline-flex; align-items: center; gap: 8px; min-width: 0; overflow-wrap: anywhere; color: var(--muted); }

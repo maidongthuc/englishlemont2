@@ -10,14 +10,18 @@ async function accessToken() {
   return data.session?.access_token || "";
 }
 
-$("google-signin").addEventListener("click", async () => {
-  $("login-msg").textContent = "";
-  const { error } = await sb.auth.signInWithOAuth({
-    provider: "google",
-    options: { redirectTo: location.origin + location.pathname },
+// Nút ở góc trên bên phải và nút giữa trang giới thiệu đều đăng nhập bằng Google
+const signinButtons = document.querySelectorAll(".js-google-signin");
+for (const btn of signinButtons) {
+  btn.addEventListener("click", async () => {
+    $("login-msg").textContent = "";
+    const { error } = await sb.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: location.origin + location.pathname },
+    });
+    if (error) $("login-msg").textContent = `Could not sign in: ${error.message}`;
   });
-  if (error) $("login-msg").textContent = `Could not sign in: ${error.message}`;
-});
+}
 $("signout").addEventListener("click", async () => {
   await sb.auth.signOut().catch(() => {});
   location.reload();

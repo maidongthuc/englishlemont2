@@ -2,12 +2,13 @@
 (async () => {
   function renderAll() { currentBook ? renderBook() : renderShelf(); }
 
-  // Chưa đăng nhập: chỉ hiện trang đăng nhập
+  // Chưa đăng nhập: chỉ hiện trang giới thiệu (toàn màn hình)
   const session = sb ? (await sb.auth.getSession()).data.session : null;
   if (!session) {
+    document.body.classList.add("signed-out");
     $("view-login").hidden = false;
     if (!sb) {
-      $("google-signin").disabled = true;
+      signinButtons.forEach(b => { b.disabled = true; });
       $("login-msg").textContent = CONFIG_PROBLEM || "Sign-in could not load. Check your connection and reload the page.";
     }
     return;

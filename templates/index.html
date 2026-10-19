@@ -11,6 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 <script>
   // Values from the server that the scripts below need
   window.APP_CONFIG = {
@@ -32,9 +33,9 @@
 <script src="{{ asset('js/main.js') }}" defer></script>
 </head>
 <body>
+{% include 'partials/landing.html' %}
 <main>
 
-  {% include 'partials/login.html' %}
   {% include 'partials/userbar.html' %}
   {% include 'partials/dashboard.html' %}
   {% include 'partials/notebook.html' %}

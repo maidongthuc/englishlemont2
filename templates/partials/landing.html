@@ -1,0 +1,80 @@
+{% macro google_icon(size=20) -%}
+<svg aria-hidden="true" viewBox="0 0 48 48" width="{{ size }}" height="{{ size }}"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.4c-.5 2.9-2.1 5.3-4.6 6.9l7.1 5.5c4.2-3.9 7.2-9.6 7.2-16.4z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.1-5.5c-2 1.4-4.6 2.2-8.8 2.2-6.2 0-11.5-4.1-13.4-9.9l-7.8 6.1C6.6 42.6 14.6 48 24 48z"/></svg>
+{%- endmacro %}
+<!-- ===== LANDING (before sign-in) ===== -->
+<div class="landing" id="view-login" hidden>
+  <header class="landing-nav">
+    <a class="brand" href="#top" aria-label="English Lemon">
+      <img src="{{ url_for('static', filename='favicon.svg') }}" alt="" width="36" height="36">
+      <span>English Lemon</span>
+    </a>
+    <button type="button" class="btn google-btn nav-signin js-google-signin" id="google-signin">
+      {{ google_icon(18) }}
+      <span class="long">Sign in with Google</span><span class="short">Sign in</span>
+    </button>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="eyebrow">Learn English, one sentence at a time</p>
+      <h1 class="hero-title">Read it. Hear it.<br><span class="hl">Say it.</span></h1>
+      <p class="hero-lead">Practise real English sentences in three ways: type them from the meaning, write what you hear,
+        and say them out loud. Start with the ready-made Library or build your own notebooks.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn google-btn js-google-signin">
+          {{ google_icon() }}
+          Start learning with Google
+        </button>
+        <span class="hero-note">Free. No password to remember.</span>
+      </div>
+      <p class="msg error" id="login-msg" role="status"></p>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="book demo-book" style="background:#9cc9f5">
+        <span class="label">
+          <span class="label-title">a1 - lesson 1</span>
+          <span class="label-count" style="display:block">22 sentences</span>
+          <span class="status doing">In progress</span>
+        </span>
+      </div>
+      <div class="sheet demo-card">
+        <p class="prompt-label">Meaning</p>
+        <p class="demo-prompt">Tôi có hai con mèo.</p>
+        <p class="demo-mask">I h••• t•• c•••.</p>
+        <p class="demo-answer">I have two cats. <span class="badge done">Correct ✓</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" aria-labelledby="features-title">
+    <h2 class="features-title" id="features-title">Everything you need to remember a sentence</h2>
+    <div class="feature-grid">
+      <article class="feature">
+        <span class="feature-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg></span>
+        <h3>Learn</h3>
+        <p>See the meaning, type the English sentence. Hints reveal letters as you go.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></span>
+        <h3>Listen &amp; type</h3>
+        <p>Hear the sentence, at normal speed or slowly, and write what you hear.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></svg></span>
+        <h3>Speak</h3>
+        <p>Read the sentence out loud. The app listens and checks what you said.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></span>
+        <h3>Library and your notebooks</h3>
+        <p>Learn the lessons in the Library, or make your own notebooks and import sentences from a CSV file.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="landing-footer">
+    <span>English Lemon</span>
+    <span>Your progress is saved to your Google account.</span>
+  </footer>
+</div>
