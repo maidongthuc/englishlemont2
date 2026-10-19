@@ -1,29 +1,62 @@
-<!-- ===== DASHBOARD ===== -->
+<!-- ===== CHOOSE: Library or My notebooks ===== -->
+<section id="view-home" hidden>
+  <h1>Choose where to <span class="hl">learn</span></h1>
+  <p class="intro">Open the Library for ready-made lessons, or your own notebooks.</p>
+
+  <div class="choices">
+    <button type="button" class="choice choice-library" id="go-library">
+      <span class="choice-art" aria-hidden="true">
+        <span class="mini-book" style="background:#ffd84d"></span>
+        <span class="mini-book" style="background:#9cc9f5"></span>
+        <span class="mini-book" style="background:#f5b0b0"></span>
+      </span>
+      <span class="choice-title">Library</span>
+      <span class="choice-text" id="library-choice-text">Lessons prepared for everyone. Your progress is your own.</span>
+      <span class="choice-count" id="library-count"></span>
+      <span class="choice-go" aria-hidden="true">Open ›</span>
+    </button>
+    <button type="button" class="choice choice-mine" id="go-mine">
+      <span class="choice-art" aria-hidden="true">
+        <span class="mini-book" style="background:#a8dcc1"></span>
+        <span class="mini-book" style="background:#c9b6f2"></span>
+      </span>
+      <span class="choice-title">My notebooks</span>
+      <span class="choice-text">Your own notebooks. Only you can see them.</span>
+      <span class="choice-count" id="mine-count"></span>
+      <span class="choice-go" aria-hidden="true">Open ›</span>
+    </button>
+  </div>
+</section>
+
+<!-- ===== ONE AREA: the Library or My notebooks ===== -->
 <section id="view-shelf" hidden>
-  <h1>Your <span class="hl">dashboard</span></h1>
-  <p class="intro">Tap a notebook to open it and start learning.</p>
+  <button class="back" id="shelf-back">‹ Choose</button>
 
-  <h2 class="section-title">Library</h2>
-  <p class="section-help" id="library-help">Notebooks prepared for everyone. Your progress on them is your own.</p>
-  <form class="sheet new-book" id="lib-form" autocomplete="off" hidden>
-    <div>
-      <label for="lib-name">New Library notebook</label>
-      <input type="text" id="lib-name" placeholder="e.g. A1 - Lesson 5" maxlength="60" required>
-    </div>
-    <button type="submit" class="btn">Add to Library</button>
-  </form>
-  <p class="msg" id="lib-msg" role="status"></p>
-  <div class="shelf" id="shelf-library"></div>
+  <div id="area-library" hidden>
+    <h1><span class="hl">Library</span></h1>
+    <p class="intro" id="library-help">Notebooks prepared for everyone. Your progress on them is your own.</p>
+    <form class="sheet new-book" id="lib-form" autocomplete="off" hidden>
+      <div>
+        <label for="lib-name">New Library notebook</label>
+        <input type="text" id="lib-name" placeholder="e.g. A1 - Lesson 5" maxlength="60" required>
+      </div>
+      <button type="submit" class="btn">Add to Library</button>
+    </form>
+    <p class="msg" id="lib-msg" role="status"></p>
+    <div class="shelf" id="shelf-library"></div>
+  </div>
 
-  <h2 class="section-title">My notebooks</h2>
-  <p class="section-help">Only you can see these.</p>
-  <form class="sheet new-book" id="book-form" autocomplete="off">
-    <div>
-      <label for="b-name">New notebook name</label>
-      <input type="text" id="b-name" placeholder="e.g. Everyday conversation" maxlength="60" required>
-    </div>
-    <button type="submit" class="btn">Create notebook</button>
-  </form>
-  <p class="msg" id="book-msg" role="status"></p>
-  <div class="shelf" id="shelf"></div>
+  <div id="area-mine" hidden>
+    <h1>My <span class="hl">notebooks</span></h1>
+    <p class="intro">Only you can see these. Tap a notebook to open it.</p>
+    <form class="sheet new-book" id="book-form" autocomplete="off">
+      <div>
+        <label for="b-name">New notebook name</label>
+        <input type="text" id="b-name" placeholder="e.g. Everyday conversation" maxlength="60" required>
+      </div>
+      <button type="submit" class="btn">Create notebook</button>
+    </form>
+    <p class="msg" id="book-msg" role="status"></p>
+    <div class="shelf" id="shelf"></div>
+  </div>
 </section>

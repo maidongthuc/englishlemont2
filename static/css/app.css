@@ -85,10 +85,36 @@ a.icon-btn { text-decoration: none; }
 .userbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
 .userbar .user { display: inline-flex; align-items: center; gap: 8px; min-width: 0; overflow-wrap: anywhere; color: var(--muted); }
 .userbar img { border-radius: 50%; border: 1.5px solid var(--ink); }
-.section-title { font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; margin: 36px 0 2px; }
-.section-help { color: var(--muted); margin: 0 0 14px; }
-.section-title + .section-help + .shelf, .section-help + .msg + .shelf { margin-top: 14px; }
 .library-tag { display: inline-block; margin: 0 0 4px; }
+
+/* ---------- Choose: Library or My notebooks ---------- */
+.choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 8px; }
+.choice {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-height: 280px;
+  padding: 24px; border: 2px solid var(--ink); border-radius: 14px; box-shadow: 6px 6px 0 var(--ink);
+  font: inherit; color: var(--ink); text-align: left; cursor: pointer;
+  transition: transform .12s, box-shadow .12s;
+}
+.choice:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--ink); }
+.choice:active { transform: translate(4px,4px); box-shadow: 2px 2px 0 var(--ink); }
+.choice-library { background: #fff3c4; }
+.choice-mine { background: #dcecfb; }
+.choice-art { display: flex; align-items: flex-end; gap: 8px; height: 92px; margin-bottom: 10px; }
+.mini-book {
+  width: 46px; height: 64px; border: 2px solid var(--ink); border-radius: 3px 7px 7px 3px;
+  box-shadow: 3px 3px 0 var(--ink); position: relative;
+}
+.mini-book::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: rgba(27,42,74,.18); border-right: 2px solid var(--ink); }
+.mini-book:nth-child(2) { height: 78px; transform: rotate(-4deg); }
+.mini-book:nth-child(3) { height: 70px; transform: rotate(5deg); }
+.choice-title { font-family: "Fraunces", Georgia, serif; font-size: clamp(1.7rem, 5vw, 2.2rem); line-height: 1.1; }
+.choice-text { color: var(--muted); }
+.choice-count { font-size: .95rem; font-weight: 700; }
+.choice-go {
+  margin-top: auto; padding: 6px 18px; border: 2px solid var(--ink); border-radius: 999px;
+  background: var(--paper); font-weight: 700;
+}
+.choice:hover .choice-go { background: var(--highlight); }
 
 /* ---------- Bookshelf ---------- */
 .new-book { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; }

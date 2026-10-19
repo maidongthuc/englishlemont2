@@ -1,7 +1,5 @@
 // Start-up: show sign-in, or load the data and show the dashboard
 (async () => {
-  function renderAll() { currentBook ? renderBook() : renderShelf(); }
-
   // Chưa đăng nhập: chỉ hiện trang giới thiệu (toàn màn hình)
   const session = sb ? (await sb.auth.getSession()).data.session : null;
   if (!session) {
@@ -21,7 +19,6 @@
   if (loadFailed) {
     showModal({ title: "Could not load your data", html: `${esc(loadError || "Your notebooks could not be loaded.")} Nothing will be saved. Reload the page to try again.`, okText: "OK", alert: true });
   }
-  $("view-shelf").hidden = false;
   if (currentBook && !books.some(b => b.id === currentBook)) currentBook = null;
-  renderAll();
+  showHome();
 })();

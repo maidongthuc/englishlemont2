@@ -7,17 +7,18 @@ function openBook(id) {
   $("form").reset(); $("search").value = "";
   $("form-msg").textContent = "";
   $("save-btn").textContent = "Save sentence"; $("cancel-btn").hidden = true;
-  $("view-shelf").hidden = true; $("view-book").hidden = false;
+  // Nút quay lại về đúng khu chứa sổ này
+  currentArea = books.find(b => b.id === id)?.library ? "library" : "mine";
+  $("back").textContent = currentArea === "library" ? "‹ Library" : "‹ My notebooks";
+  $("view-home").hidden = true; $("view-shelf").hidden = true; $("view-book").hidden = false;
   renderBook();
   window.scrollTo(0, 0);
 }
 function closeBook() {
   currentBook = null;
-  $("view-book").hidden = true; $("view-shelf").hidden = false;
-  $("book-msg").textContent = ""; $("lib-msg").textContent = "";
+  $("view-book").hidden = true;
   document.title = "My English Notebooks";
-  renderShelf();
-  window.scrollTo(0, 0);
+  openArea(currentArea || "mine");
 }
 $("back").addEventListener("click", closeBook);
 

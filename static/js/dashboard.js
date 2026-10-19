@@ -1,4 +1,36 @@
-// Dashboard: the Library and My notebooks shelves
+// Dashboard: choose the Library or My notebooks, then that area's shelf
+/* ---------- Chọn khu: Library hoặc My notebooks ---------- */
+let currentArea = null; // "library" | "mine" | null (đang ở màn hình chọn)
+
+function showHome() {
+  currentArea = null;
+  $("view-shelf").hidden = true; $("view-book").hidden = true; $("view-home").hidden = false;
+  document.title = "My English Notebooks";
+  renderShelf();
+  window.scrollTo(0, 0);
+}
+
+function openArea(area) {
+  currentArea = area;
+  $("area-library").hidden = area !== "library";
+  $("area-mine").hidden = area !== "mine";
+  $("book-msg").textContent = ""; $("lib-msg").textContent = "";
+  $("view-home").hidden = true; $("view-shelf").hidden = false;
+  renderShelf();
+  window.scrollTo(0, 0);
+}
+
+$("go-library").addEventListener("click", () => openArea("library"));
+$("go-mine").addEventListener("click", () => openArea("mine"));
+$("shelf-back").addEventListener("click", showHome);
+
+// "36 notebooks · 338 sentences"
+function areaCount(list) {
+  const ids = new Set(list.map(b => b.id));
+  const n = items.filter(it => ids.has(it.notebookId)).length;
+  return `${list.length} ${list.length === 1 ? "notebook" : "notebooks"} · ${n} ${n === 1 ? "sentence" : "sentences"}`;
+}
+
 /* ---------- Giá sổ tay ---------- */
 function renderShelf() {
   $("lib-form").hidden = !isAdmin;
@@ -6,6 +38,11 @@ function renderShelf() {
   $("library-help").textContent = isAdmin
     ? "Notebooks for everyone. You are an admin: add and edit them here. Everyone learns them with their own progress."
     : "Notebooks prepared for everyone. Your progress on them is your own.";
+  $("library-choice-text").textContent = isAdmin
+    ? "Lessons for everyone. You are an admin: you can add and edit them."
+    : "Lessons prepared for everyone. Your progress is your own.";
+  $("library-count").textContent = areaCount(books.filter(b => b.library));
+  $("mine-count").textContent = areaCount(books.filter(b => !b.library));
   fillShelf($("shelf-library"), books.filter(b => b.library),
     isAdmin ? "The Library is empty. Add the first notebook above." : "The Library is empty for now.");
   fillShelf($("shelf"), books.filter(b => !b.library),
