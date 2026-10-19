@@ -40,17 +40,19 @@ def get_whisper():
         return _whisper
 
 
-# All notebooks and sentences live in Supabase (tables notebooks and items, see supabase.sql).
+# All notebooks and sentences live in Supabase (see supabase.sql). People sign in with Google through Supabase;
+# each request carries the person's sign-in token, and Supabase's access rules decide what they may read and change.
 # On Vercel set SUPABASE_URL and SUPABASE_KEY under Settings > Environment Variables; locally put them in .env
 SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
+# The publishable key: the sign-in page in the browser needs it, so it must never be the secret key
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY") or ""
 
 
-def supabase_rpc(function, body):
+def supabase_rpc(function, body, token):
     req = urllib.request.Request(
         f"{SUPABASE_URL}/rest/v1/rpc/{function}",
         data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
-        headers={"apikey": SUPABASE_KEY, "Content-Type": "application/json"},
+        headers={"apikey": SUPABASE_KEY, "Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         method="POST",
     )
     with urllib.request.urlopen(req, timeout=15) as res:
@@ -61,70 +63,89 @@ def supabase_rpc(function, body):
 def storage_error(action, e):
     if isinstance(e, urllib.error.HTTPError):
         detail = e.read().decode("utf-8", "replace")[:300]
+        if e.code == 401 or "PGRST301" in detail or "PGRST303" in detail:
+            return DataError("Your sign-in has expired. Reload the page and sign in again.", 401)
         if e.code == 404 or "PGRST202" in detail:
-            return DataError("The database tables are missing in Supabase. Run supabase.sql in the Supabase SQL Editor.")
-        if e.code in (401, 403) or "42501" in detail:
-            return DataError("Supabase refused the request. Check SUPABASE_KEY and the tables' access policy (supabase.sql).")
+            return DataError("The database is not set up. Run supabase.sql in the Supabase SQL Editor.")
+        if e.code == 403 or "42501" in detail:
+            return DataError("You are not allowed to change this.", 403)
         if "23503" in detail:
             return DataError(f"Could not {action} the data: a sentence points to a notebook that doesn't exist.")
         return DataError(f"Could not {action} the data: Supabase error {e.code} {detail}")
     return DataError(f"Could not {action} the data ({type(e).__name__}).")
 
 
-def load_data():
+def config_error():
     if not (SUPABASE_URL and SUPABASE_KEY):
-        raise DataError(NO_DATABASE)
+        return ("No database is connected. Set SUPABASE_URL and SUPABASE_KEY "
+                "(Vercel: Settings > Environment Variables, then redeploy; locally: the .env file).")
+    if SUPABASE_KEY.startswith("sb_secret_"):
+        return "SUPABASE_KEY must be the publishable key (sb_publishable_...), not the secret key."
+    return None
+
+
+def load_data(token):
     try:
-        data = supabase_rpc("load_app_data", {})
+        data = supabase_rpc("load_app_data", {}, token)
     except Exception as e:
         # Raise instead of returning empty data: the page would then save the empty list over everything
         raise storage_error("load", e)
     if not isinstance(data, dict):
-        return {"items": [], "books": []}
+        data = {}
     items = data.get("items") if isinstance(data.get("items"), list) else []
     books = data.get("books") if isinstance(data.get("books"), list) else []
-    return {"items": items, "books": books}
+    return {"items": items, "books": books, "isAdmin": data.get("isAdmin") is True}
 
 
-def save_data(data):
-    if not (SUPABASE_URL and SUPABASE_KEY):
-        raise DataError(NO_DATABASE)
+def save_data(data, token):
     books = data.get("books") if isinstance(data.get("books"), list) else []
     items = data.get("items") if isinstance(data.get("items"), list) else []
     try:
-        supabase_rpc("save_app_data", {"p_books": books, "p_items": items})
+        supabase_rpc("save_app_data", {"p_books": books, "p_items": items}, token)
     except Exception as e:
         raise storage_error("save", e)
 
 
-NO_DATABASE = ("No database is connected. Set SUPABASE_URL and SUPABASE_KEY "
-               "(Vercel: Settings > Environment Variables, then redeploy; locally: the .env file).")
-
-
 class DataError(Exception):
-    pass
+    def __init__(self, message, status=503):
+        super().__init__(message)
+        self.status = status
 
 
 @app.route("/api/data", methods=["GET", "POST"])
 def api_data():
+    problem = config_error()
+    if problem:
+        return jsonify(error=problem), 503
+    auth = request.headers.get("Authorization", "")
+    token = auth[7:].strip() if auth.startswith("Bearer ") else ""
+    if not token:
+        return jsonify(error="Sign in first."), 401
     try:
         if request.method == "GET":
-            return jsonify(load_data())
+            return jsonify(load_data(token))
 
         data = request.get_json(silent=True) or {}
         if not isinstance(data, dict):
             return jsonify(error="Invalid JSON payload."), 400
 
-        save_data(data)
+        save_data(data, token)
         return jsonify(success=True)
     except DataError as e:
-        return jsonify(error=str(e)), 503
+        return jsonify(error=str(e)), e.status
 
 
 @app.route("/")
 def index():
-    # Without faster-whisper (e.g. on Vercel) the page uses the browser's own speech recognition instead
-    return render_template("index.html", whisper_available=importlib.util.find_spec("faster_whisper") is not None)
+    return render_template(
+        "index.html",
+        # Without faster-whisper (e.g. on Vercel) the page uses the browser's own speech recognition instead
+        whisper_available=importlib.util.find_spec("faster_whisper") is not None,
+        # Google sign-in runs in the browser with Supabase's library
+        supabase_url=SUPABASE_URL,
+        supabase_key="" if config_error() else SUPABASE_KEY,
+        config_problem=config_error() or "",
+    )
 
 
 @app.route("/speak", methods=["POST"])
