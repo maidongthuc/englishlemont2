@@ -1,0 +1,50 @@
+<!-- ===== LEARN MODE ===== -->
+<section id="view-learn" hidden>
+  <button class="back" id="learn-back">‹ Back to notebook</button>
+  <h1 id="learn-title"></h1>
+  <p class="intro" id="learn-intro"></p>
+
+  <div class="sheet" id="learn-card">
+    <div class="learn-top">
+      <span class="count" id="learn-progress"></span>
+      <span class="count" id="learn-score"></span>
+    </div>
+    <p class="prompt-label"><span id="learn-label">Meaning</span> <span class="tag" id="learn-again-tag" hidden>Try again</span></p>
+    <p class="prompt" id="learn-prompt"></p>
+    <div class="row audio-row" id="learn-audio" hidden>
+      <button type="button" class="btn" id="learn-play" title="Press Tab to replay">▶ Play (Tab)</button>
+      <button type="button" class="btn ghost" id="learn-play-slow">Play slowly</button>
+    </div>
+    <p class="prompt-label hint-head" id="learn-hint-head">
+      <span><span id="learn-hint-text">Hint · </span><span id="learn-mask-count"></span></span>
+      <span class="row">
+        <button type="button" class="icon-btn" id="learn-hint-letter">Hint a letter</button>
+        <button type="button" class="icon-btn" id="learn-hint-toggle" aria-controls="learn-mask"></button>
+      </span>
+    </p>
+    <div class="mask" id="learn-mask" aria-live="polite"></div>
+    <form id="learn-form" autocomplete="off">
+      <label for="learn-input" id="learn-input-label">Your answer (English)</label>
+      <input type="text" id="learn-input" autocapitalize="off" spellcheck="false">
+      <div class="speak-row" id="speak-box" hidden>
+        <p class="msg" id="speak-msg" role="status"></p>
+      </div>
+      <div class="row">
+        <button type="button" class="btn learn-btn" id="learn-record" hidden></button>
+        <button type="submit" class="btn" id="learn-check">Check</button>
+        <button type="button" class="btn ghost" id="learn-mark-ok" hidden>✓ Mark correct</button>
+        <button type="button" class="btn ghost" id="learn-skip">Show answer</button>
+        <button type="button" class="btn" id="learn-next" hidden>Next ›</button>
+      </div>
+    </form>
+    <div class="feedback" id="learn-feedback" role="status" hidden></div>
+  </div>
+
+  <div class="sheet" id="learn-done" hidden>
+    <p class="prompt" id="learn-result"></p>
+    <div class="row">
+      <button type="button" class="btn" id="learn-again">Learn again</button>
+      <button type="button" class="btn ghost" id="learn-retry" hidden>Practice mistakes</button>
+    </div>
+  </div>
+</section>

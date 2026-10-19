@@ -6,7 +6,7 @@ import threading
 import urllib.error
 import urllib.request
 
-from flask import Flask, jsonify, render_template, request, send_file
+from flask import Flask, jsonify, render_template, request, send_file, url_for
 from gtts import gTTS
 from gtts.tts import gTTSError
 
@@ -133,6 +133,18 @@ def api_data():
         return jsonify(success=True)
     except DataError as e:
         return jsonify(error=str(e)), e.status
+
+
+@app.context_processor
+def static_assets():
+    # asset("js/learn.js") -> /static/js/learn.js?v=<file time>: browsers fetch the new file after each change
+    def asset(path):
+        try:
+            version = int(os.path.getmtime(os.path.join(app.static_folder, path)))
+        except OSError:
+            version = 0
+        return url_for("static", filename=path, v=version)
+    return {"asset": asset}
 
 
 @app.route("/")

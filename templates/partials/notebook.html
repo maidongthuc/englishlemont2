@@ -1,0 +1,73 @@
+<!-- ===== INSIDE A NOTEBOOK ===== -->
+<section id="view-book" hidden>
+  <button class="back" id="back">‹ Dashboard</button>
+  <div class="book-head">
+    <div>
+      <p class="tag library-tag" id="book-library-tag" hidden>Library</p>
+      <h1 id="book-title"></h1>
+      <form class="rename-form" id="rename-form" autocomplete="off" hidden>
+        <input type="text" id="rename-input" maxlength="60" aria-label="Notebook name" required>
+        <div class="row">
+          <button type="submit" class="icon-btn">Save</button>
+          <button type="button" class="icon-btn" id="rename-cancel">Cancel</button>
+        </div>
+        <p class="msg error" id="rename-msg" role="status"></p>
+      </form>
+      <div class="row">
+        <button class="btn learn-btn" id="learn-book"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>Learn</button>
+        <button class="btn learn-btn" id="listen-book"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>Listen &amp; type</button>
+        <button class="btn learn-btn" id="speak-book"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></svg>Speak</button>
+        <label class="switch">
+          <input type="checkbox" id="learn-random" role="switch">
+          <span class="track" aria-hidden="true"></span>
+          Random
+        </label>
+      </div>
+      <div class="row progress-row">
+        <span id="book-progress"></span>
+        <button type="button" class="icon-btn" id="reset-progress">Reset progress</button>
+      </div>
+    </div>
+    <div class="row" id="book-actions">
+      <button class="icon-btn" id="rename-book">Rename</button>
+      <button class="icon-btn danger" id="delete-book">Delete notebook</button>
+    </div>
+  </div>
+  <p class="intro">Tap a sentence to see its meaning and hear it read aloud.</p>
+
+  <div id="book-editor">
+  <form class="sheet" id="form" autocomplete="off">
+    <label for="f-sentence">English sentence</label>
+    <input type="text" id="f-sentence" placeholder="I have to complete my English assignment tonight." required>
+    <label for="f-meaning">Meaning</label>
+    <input type="text" id="f-meaning" placeholder="Tối nay tôi phải làm xong bài tập tiếng Anh." required>
+    <div class="row">
+      <button type="submit" class="btn" id="save-btn">Save sentence</button>
+      <button type="button" class="btn ghost" id="cancel-btn" hidden>Cancel edit</button>
+    </div>
+    <p class="msg" id="form-msg" role="status"></p>
+  </form>
+
+  <div class="sheet import">
+    <label>Add many sentences from a CSV file</label>
+    <p class="import-help">Two columns: <b>sentence</b>, <b>meaning</b>. Sentences already in this notebook are skipped.</p>
+    <div class="row">
+      <label class="btn ghost file-btn">
+        <input type="file" id="csv-file" accept=".csv,text/csv">
+        Upload CSV
+      </label>
+      <a class="icon-btn" href="/static/sample.csv" download="sample.csv">Download sample CSV</a>
+    </div>
+    <p class="msg" id="csv-msg" role="status"></p>
+  </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="search">
+      <label for="search">Search</label>
+      <input type="text" id="search" placeholder="Type a sentence or meaning">
+    </div>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="sheet"><div id="list"></div></div>
+</section>

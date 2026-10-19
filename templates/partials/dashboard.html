@@ -1,0 +1,29 @@
+<!-- ===== DASHBOARD ===== -->
+<section id="view-shelf" hidden>
+  <h1>Your <span class="hl">dashboard</span></h1>
+  <p class="intro">Tap a notebook to open it and start learning.</p>
+
+  <h2 class="section-title">Library</h2>
+  <p class="section-help" id="library-help">Notebooks prepared for everyone. Your progress on them is your own.</p>
+  <form class="sheet new-book" id="lib-form" autocomplete="off" hidden>
+    <div>
+      <label for="lib-name">New Library notebook</label>
+      <input type="text" id="lib-name" placeholder="e.g. A1 - Lesson 5" maxlength="60" required>
+    </div>
+    <button type="submit" class="btn">Add to Library</button>
+  </form>
+  <p class="msg" id="lib-msg" role="status"></p>
+  <div class="shelf" id="shelf-library"></div>
+
+  <h2 class="section-title">My notebooks</h2>
+  <p class="section-help">Only you can see these.</p>
+  <form class="sheet new-book" id="book-form" autocomplete="off">
+    <div>
+      <label for="b-name">New notebook name</label>
+      <input type="text" id="b-name" placeholder="e.g. Everyday conversation" maxlength="60" required>
+    </div>
+    <button type="submit" class="btn">Create notebook</button>
+  </form>
+  <p class="msg" id="book-msg" role="status"></p>
+  <div class="shelf" id="shelf"></div>
+</section>
