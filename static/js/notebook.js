@@ -186,6 +186,7 @@ function renderBook() {
             <p class="meaning">${esc(it.meaning)}</p>
             <div class="row">
               <button class="icon-btn" data-act="speak">Listen</button>
+              ${it.progress ? `<button class="icon-btn" data-act="reset">Reset</button>` : ""}
               ${editable ? `<button class="icon-btn" data-act="edit">Edit</button>
               <button class="icon-btn danger" data-act="delete">Delete</button>` : ""}
             </div>
@@ -201,6 +202,8 @@ $("list").addEventListener("click", (e) => {
   if (e.target.closest("button.sentence")) { openId = openId === it.id ? null : it.id; renderBook(); return; }
   const act = e.target.closest("button[data-act]")?.dataset.act;
   if (act === "speak") speak(it.term);
+  // Tiến độ là của riêng mỗi người, nên câu trong Library cũng reset được
+  if (act === "reset") resetSentence(it);
   if (!canEdit(books.find(b => b.id === it.notebookId))) return;
   if (act === "edit") {
     editingId = it.id;
@@ -231,6 +234,24 @@ $("reset-progress").addEventListener("click", async () => {
   }
   renderBook();
 });
+
+// Xoá tiến độ Learn / Listen / Speak của một câu
+async function resetSentence(it) {
+  const ok = await showModal({
+    title: "Reset this sentence?",
+    html: `It will be marked as not done for Learn, Listen and Speak.<span class="quote">${esc(it.term)}</span>`,
+    okText: "Reset",
+  });
+  if (!ok) return;
+  const saved = it.progress;
+  delete it.progress;
+  try { await persist(); }
+  catch {
+    it.progress = saved;
+    await showModal({ title: "Could not reset", html: saveFail("the progress"), okText: "OK", alert: true });
+  }
+  renderBook();
+}
 
 async function deleteSentence(it) {
   const ok = await showModal({
