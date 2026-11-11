@@ -193,6 +193,7 @@ a.icon-btn { text-decoration: none; }
 .feedback.ok { background: #e6f5ec; border-color: #2e7d4f; }
 .feedback.bad { background: #fdecea; border-color: var(--danger); }
 .feedback .answer { font-weight: 700; }
+.feedback .answer-meaning { color: var(--ink); margin-top: 2px; padding-left: 10px; border-left: 3px solid var(--highlight); }
 .feedback .hint { font-size: .9rem; color: var(--muted); margin-top: 4px; }
 .audio-row { margin: 6px 0 20px; }
 .hint-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 4px; }

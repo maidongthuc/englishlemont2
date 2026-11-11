@@ -204,10 +204,10 @@ function reveal(correct) {
     it.progress = { ...it.progress, [learnMode]: correct ? "done" : "wrong" };
     persist().catch(() => {});
   }
+  // Đúng hay sai đều đọc câu đúng; đúng thì đợi nhạc chúc mừng xong mới đọc
+  if (correct) playCorrect();
+  sayTimer = setTimeout(() => { if (!$("view-learn").hidden) speak(it.term); }, correct ? 650 : 300);
   if (correct) {
-    playCorrect();
-    // Nhạc xong thì đọc câu
-    sayTimer = setTimeout(() => { if (!$("view-learn").hidden) speak(it.term); }, 650);
     done++;
     if (!mistakes.includes(it)) score++;
   } else {
@@ -221,10 +221,11 @@ function reveal(correct) {
   renderMask(true);
   const fb = $("learn-feedback");
   fb.className = "feedback " + (correct ? "ok" : "bad");
+  // Nghĩa tiếng Việt luôn nằm ngay dưới câu đúng
+  const answer = `<div class="answer">${esc(it.term)}</div><div class="answer-meaning">${esc(it.meaning)}</div>`;
   fb.innerHTML = correct
-    ? `<div>✓ Correct!</div><div class="answer">${esc(it.term)}</div>`
-    : `<div>✗ The answer is:</div><div class="answer">${esc(it.term)}</div><div class="hint">This sentence will come back later until you get it right.</div>`;
-  if (learnMode === "listen") fb.insertAdjacentHTML("beforeend", `<div class="hint">${esc(it.meaning)}</div>`);
+    ? `<div>✓ Correct!</div>${answer}`
+    : `<div>✗ The answer is:</div>${answer}<div class="hint">This sentence will come back later until you get it right.</div>`;
   if (learnMode === "speak" && !correct && $("learn-input").value) fb.insertAdjacentHTML("beforeend", `<div class="hint">You said: ${esc($("learn-input").value)}</div>`);
   fb.insertAdjacentHTML("beforeend", `<div class="row"><button type="button" class="icon-btn" id="learn-listen">Listen</button></div>`);
   $("learn-listen").addEventListener("click", () => speak(it.term));
